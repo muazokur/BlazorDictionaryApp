@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BlazorDictionary.Api.Domain/1.0.0": {
+        "dependencies": {
+          "BlazorDictionary.Common": "1.0.0"
+        },
+        "runtime": {
+          "BlazorDictionary.Api.Domain.dll": {}
+        }
+      },
+      "BlazorDictionary.Common/1.0.0": {
+        "runtime": {
+          "BlazorDictionary.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BlazorDictionary.Api.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlazorDictionary.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "E6donDmj+613QQOghawnvhC5M8QHf+tKJqJsBjl5cjg=",
+  "Source": "BlazorDictionary.Api.WebApi",
+  "BasePath": "_content/BlazorDictionary.Api.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

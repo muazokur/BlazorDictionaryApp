@@ -1,0 +1,12 @@
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\bin\Debug\net6.0\BlazorDictionary.Common.deps.json
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\bin\Debug\net6.0\BlazorDictionary.Common.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\bin\Debug\net6.0\BlazorDictionary.Common.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.csproj.AssemblyReference.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.AssemblyInfoInputs.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.AssemblyInfo.cs
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.csproj.CoreCompileInputs.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\refint\BlazorDictionary.Common.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\BlazorDictionary.Common.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Common\BlazorDictionary.Common\obj\Debug\net6.0\ref\BlazorDictionary.Common.dll

@@ -1,0 +1,12 @@
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Api.Application.deps.json
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Api.Application.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Api.Application.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.csproj.AssemblyReference.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.AssemblyInfoInputs.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.AssemblyInfo.cs
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.csproj.CoreCompileInputs.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\refint\BlazorDictionary.Api.Application.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\ref\BlazorDictionary.Api.Application.dll

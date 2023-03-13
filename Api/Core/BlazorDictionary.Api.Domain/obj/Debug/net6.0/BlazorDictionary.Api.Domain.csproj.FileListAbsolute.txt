@@ -1,0 +1,15 @@
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\bin\Debug\net6.0\BlazorDictionary.Api.Domain.deps.json
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\bin\Debug\net6.0\BlazorDictionary.Api.Domain.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\bin\Debug\net6.0\BlazorDictionary.Api.Domain.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\bin\Debug\net6.0\BlazorDictionary.Common.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\bin\Debug\net6.0\BlazorDictionary.Common.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.csproj.AssemblyReference.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.AssemblyInfoInputs.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.AssemblyInfo.cs
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.csproj.CoreCompileInputs.cache
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.csproj.CopyComplete
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\refint\BlazorDictionary.Api.Domain.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\BlazorDictionary.Api.Domain.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Domain\obj\Debug\net6.0\ref\BlazorDictionary.Api.Domain.dll
