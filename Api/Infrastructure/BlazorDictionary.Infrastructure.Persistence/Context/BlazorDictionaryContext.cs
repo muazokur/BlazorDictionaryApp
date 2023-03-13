@@ -1,4 +1,4 @@
-﻿using BlazorDictionary.Api.Domain.Models;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using BlazorDictionary.Api.Domain.Models;
 
 namespace BlazorDictionary.Infrastructure.Persistence.Context
 {
@@ -15,7 +16,7 @@ namespace BlazorDictionary.Infrastructure.Persistence.Context
 
         public BlazorDictionaryContext(DbContextOptions options) : base(options)
         {
-             
+
         }
 
         public DbSet<User> Users { get; set; }
@@ -61,7 +62,7 @@ namespace BlazorDictionary.Infrastructure.Persistence.Context
 
         private void OnBeforeSave()
         {
-            var addedEntities =ChangeTracker.Entries().Where(i=>i.State==EntityState.Added).Select(i=>(BaseEntity)i.Entity);
+            var addedEntities = ChangeTracker.Entries().Where(i => i.State == EntityState.Added).Select(i => (BaseEntity)i.Entity);
             PrepareAddedEntities(addedEntities);
         }
 
@@ -69,7 +70,7 @@ namespace BlazorDictionary.Infrastructure.Persistence.Context
         {
             foreach (var entity in entities)
             {
-                if(entity.CreateDate == DateTime.MinValue)
+                if (entity.CreateDate == DateTime.MinValue)
                     entity.CreateDate = DateTime.Now;
             }
         }
