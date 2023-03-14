@@ -18,7 +18,7 @@ namespace BlazorDictionary.Infrastructure.Persistence.EntityConfigurations.Entry
             builder.ToTable("entrycommentfavorite", BlazorDictionaryContext.DEFAULT_SCHEMA);
 
             builder.HasOne(i=>i.EntryComment).WithMany(i=>i.EntryCommentFavorites).HasForeignKey(i=>i.EntryCommentId);
-            builder.HasOne(i=>i.CreatedUser).WithMany(i=>i.EntryCommentFavorites).HasForeignKey(i=>i.CreatedById);
+            builder.HasOne(i=>i.CreatedUser).WithMany(i=>i.EntryCommentFavorites).HasForeignKey(i=>i.CreatedById).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

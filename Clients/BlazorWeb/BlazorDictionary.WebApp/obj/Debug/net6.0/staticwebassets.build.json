@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OvYP+VG7jiN0DAKwTJEbsCuN61vbnT9/HIU/RJsJ+IA=",
+  "Hash": "RUj1eQ4+FHK9FkkAGFCdtLi1MDC4Nfjn83slO6o1m7s=",
   "Source": "BlazorDictionary.WebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -136,23 +136,6 @@
       "OriginalItemSpec": "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.13\\runtimes\\browser-wasm\\native\\dotnet.wasm"
     },
     {
-      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "BlazorDictionary.WebApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.13\\runtimes\\browser-wasm\\native\\icudt.dat"
-    },
-    {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "BlazorDictionary.WebApp",
       "SourceType": "Computed",
@@ -202,6 +185,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.13\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+    },
+    {
+      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "BlazorDictionary.WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.13\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
@@ -6885,6 +6885,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "BlazorDictionary.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
+    },
+    {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorDictionary.WebApp",
       "SourceType": "Discovered",
@@ -6985,23 +7002,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
-    },
-    {
-      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "BlazorDictionary.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
