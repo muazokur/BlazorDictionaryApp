@@ -14,6 +14,11 @@ namespace BlazorDictionary.Infrastructure.Persistence.Context
     {
         public const string DEFAULT_SCHEMA = "dbo";
 
+        public BlazorDictionaryContext()
+        {
+
+        }
+
         public BlazorDictionaryContext(DbContextOptions options) : base(options)
         {
 
@@ -31,6 +36,18 @@ namespace BlazorDictionary.Infrastructure.Persistence.Context
 
         public DbSet<EmailConfirmation> EmailConfirmations { get; set; }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if(!optionsBuilder.IsConfigured)
+            {
+                var connectionString = "Server=DESKTOP-G7KHF4G\\SQLEXPRESS;Initial Catalog=BlazorDictionaryDB;Integrated security=true";
+                optionsBuilder.UseSqlServer(connectionString, options =>
+                {
+                    options.EnableRetryOnFailure();
+                });
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

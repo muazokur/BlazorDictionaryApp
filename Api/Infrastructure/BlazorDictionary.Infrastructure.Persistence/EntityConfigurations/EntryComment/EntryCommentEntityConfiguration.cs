@@ -17,7 +17,7 @@ namespace BlazorDictionary.Infrastructure.Persistence.EntityConfigurations.Entry
 
             builder.ToTable("entrycomment", BlazorDictionaryContext.DEFAULT_SCHEMA);
 
-            builder.HasOne(i=>i.CreatedBy).WithMany(i=>i.EntryComments).HasForeignKey(i=>i.CreatedBy);
+            builder.HasOne(i=>i.CreatedBy).WithMany(i=>i.EntryComments).HasForeignKey(i=>i.CreatedById).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(i=>i.Entry).WithMany(i=>i.EntryComments).HasForeignKey(i=>i.EntryId);
         }
     }
