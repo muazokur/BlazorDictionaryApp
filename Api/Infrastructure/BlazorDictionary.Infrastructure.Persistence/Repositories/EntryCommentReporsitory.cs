@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BlazorDictionary.Infrastructure.Persistence.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    internal class EntryCommentReporsitory : GenericRepository<EntryComment>, IEntryCommentRepository
     {
-        public UserRepository(BlazorDictionaryContext dbContext) : base(dbContext)
+        public EntryCommentReporsitory(BlazorDictionaryContext dbContext) : base(dbContext)
         {
         }
     }

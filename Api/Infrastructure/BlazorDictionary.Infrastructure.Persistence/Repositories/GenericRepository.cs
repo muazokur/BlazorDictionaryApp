@@ -14,11 +14,11 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
 
-        private readonly BlazorDictionaryContext dbContext;
+        private readonly DbContext dbContext;
         protected DbSet<TEntity> entity => dbContext.Set<TEntity>();
 
 
-        public GenericRepository(BlazorDictionaryContext dbContext)
+        public GenericRepository(DbContext dbContext)
         {
             this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
@@ -30,9 +30,10 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
             return dbContext.SaveChanges();
         }
 
-        public int Add(IEnumerable<TEntity> entities)
+        public virtual int Add(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            this.entity.AddRange(entities);
+            return dbContext.SaveChanges();
         }
 
         public virtual async Task<int> AddAsync(TEntity entity)
@@ -41,14 +42,14 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
             return await dbContext.SaveChangesAsync();
         }
 
-        public Task<int> AddAsync(IEnumerable<TEntity> entities)
+        public virtual async Task<int> AddAsync(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            await this.entity.AddRangeAsync(entities);
+            return await dbContext.SaveChangesAsync();
         }
 
 
         #endregion
-
 
         #region Update Methods
         public virtual int Update(TEntity entity)
@@ -67,7 +68,6 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
             return await dbContext.SaveChangesAsync();
         }
         #endregion
-
 
         #region Delete Methods
         public virtual int Delete(TEntity entity)
@@ -108,18 +108,17 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
 
         public virtual bool DeleteRange(Expression<Func<TEntity, bool>> predicate)
         {
-            dbContext.RemoveRange(predicate);
+            dbContext.RemoveRange(entity.Where(predicate));
             return dbContext.SaveChanges() > 0;
         }
 
         public virtual async Task<bool> DeleteRangeAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            dbContext.RemoveRange(predicate);
+            dbContext.RemoveRange(entity.Where(predicate));
             return await dbContext.SaveChangesAsync() > 0;
         }
 
         #endregion
-
 
         #region AddOrUpdate Methods
 
@@ -143,7 +142,6 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
 
         #endregion
 
-
         #region Get Methods
 
         public virtual IQueryable<TEntity> AsQuaryable() => entity.AsQueryable();
@@ -163,9 +161,12 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
             return query;
         }
 
-        public Task<List<TEntity>> GetAll(bool tracking = true)
+        public virtual async Task<List<TEntity>> GetAll(bool tracking = true)
         {
-            throw new NotImplementedException();
+            if (tracking != true)
+                entity.AsNoTracking();
+
+            return await entity.ToListAsync();
         }
 
         public async Task<TEntity> GetByIdAsync(Guid id, bool noTracking = true, params Expression<Func<TEntity, object>>[] includes)
@@ -228,15 +229,22 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
             return await query.SingleOrDefaultAsync();
         }
 
-        public Task<List<TEntity>> FirsOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, bool noTracking = true, params Expression<Func<TEntity, object>>[] includes)
+        public virtual async Task<TEntity> FirsOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, bool noTracking = true, params Expression<Func<TEntity, object>>[] includes)
         {
-            throw new NotImplementedException();
+            IQueryable<TEntity> query = entity;
+
+            if (predicate != null)
+                query = query.Where(predicate);
+
+            query = ApplyIncludes(query, includes);
+
+            if (noTracking)
+                query = query.AsNoTracking();
+
+            return await query.FirstOrDefaultAsync();
         }
 
         #endregion
-
-
-
 
         #region Bulk Methods
         public virtual async Task BulkAdd(IEnumerable<TEntity> entities)
@@ -288,8 +296,6 @@ namespace BlazorDictionary.Infrastructure.Persistence.Repositories
         }
 
         #endregion
-
-
        
 
         private static IQueryable<TEntity> ApplyIncludes(IQueryable<TEntity> query, params Expression<Func<TEntity, object>>[] includes)

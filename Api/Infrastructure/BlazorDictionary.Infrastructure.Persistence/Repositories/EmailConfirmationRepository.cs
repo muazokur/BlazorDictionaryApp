@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BlazorDictionary.Infrastructure.Persistence.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class EmailConfirmationRepository : GenericRepository<EmailConfirmation>, IEmailConfirmationRepository
     {
-        public UserRepository(BlazorDictionaryContext dbContext) : base(dbContext)
+        public EmailConfirmationRepository(BlazorDictionaryContext dbContext) : base(dbContext)
         {
         }
     }
