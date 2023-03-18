@@ -1,4 +1,6 @@
-﻿using BlazorDictionary.Infrastructure.Persistence.Context;
+﻿using BlazorDictionary.Api.Application.Interfaces.Repositories;
+using BlazorDictionary.Infrastructure.Persistence.Context;
+using BlazorDictionary.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +29,8 @@ namespace BlazorDictionary.Infrastructure.Persistence.Extensions
 
             //seedData.SeedAsync(configuration).GetAwaiter().GetResult();
 
+
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

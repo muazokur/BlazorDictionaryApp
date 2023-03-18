@@ -806,6 +806,19 @@
           }
         }
       },
+      "BlazorDictionary.Api.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BlazorDictionary.Api.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlazorDictionary.Api.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlazorDictionary.Api.Application.dll": {}
+        }
+      },
       "BlazorDictionary.Api.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2091,6 +2104,11 @@
         "version.txt"
       ]
     },
+    "BlazorDictionary.Api.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application.csproj",
+      "msbuildProject": "../../Core/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application.csproj"
+    },
     "BlazorDictionary.Api.Domain/1.0.0": {
       "type": "project",
       "path": "../../Core/BlazorDictionary.Api.Domain/BlazorDictionary.Api.Domain.csproj",
@@ -2104,6 +2122,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BlazorDictionary.Api.Application >= 1.0.0",
       "BlazorDictionary.Api.Domain >= 1.0.0",
       "Bogus >= 34.0.2",
       "Microsoft.EntityFrameworkCore >= 6.0.3",
@@ -2145,6 +2164,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Application\\BlazorDictionary.Api.Application\\BlazorDictionary.Api.Application.csproj": {
+              "projectPath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Application\\BlazorDictionary.Api.Application\\BlazorDictionary.Api.Application.csproj"
+            },
             "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Domain\\BlazorDictionary.Api.Domain.csproj": {
               "projectPath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Domain\\BlazorDictionary.Api.Domain.csproj"
             }

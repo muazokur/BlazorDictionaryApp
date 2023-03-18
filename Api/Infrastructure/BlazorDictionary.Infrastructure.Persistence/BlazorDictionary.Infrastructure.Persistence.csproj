@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application.csproj" />
     <ProjectReference Include="..\..\Core\BlazorDictionary.Api.Domain\BlazorDictionary.Api.Domain.csproj" />
   </ItemGroup>
 

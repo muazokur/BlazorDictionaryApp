@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BlazorDictionary.Api.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BlazorDictionary.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlazorDictionary.Api.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlazorDictionary.Api.Domain.dll": {}
+        }
+      },
+      "BlazorDictionary.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BlazorDictionary.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlazorDictionary.Common.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BlazorDictionary.Api.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../BlazorDictionary.Api.Domain/BlazorDictionary.Api.Domain.csproj",
+      "msbuildProject": "../../BlazorDictionary.Api.Domain/BlazorDictionary.Api.Domain.csproj"
+    },
+    "BlazorDictionary.Common/1.0.0": {
+      "type": "project",
+      "path": "../../../../Common/BlazorDictionary.Common/BlazorDictionary.Common.csproj",
+      "msbuildProject": "../../../../Common/BlazorDictionary.Common/BlazorDictionary.Common.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BlazorDictionary.Api.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\MUAZ\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Domain\\BlazorDictionary.Api.Domain.csproj": {
+              "projectPath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Domain\\BlazorDictionary.Api.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

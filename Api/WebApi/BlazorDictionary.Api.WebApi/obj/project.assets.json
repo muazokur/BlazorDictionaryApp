@@ -848,6 +848,19 @@
           }
         }
       },
+      "BlazorDictionary.Api.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BlazorDictionary.Api.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlazorDictionary.Api.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlazorDictionary.Api.Application.dll": {}
+        }
+      },
       "BlazorDictionary.Api.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -875,6 +888,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "BlazorDictionary.Api.Application": "1.0.0",
           "BlazorDictionary.Api.Domain": "1.0.0",
           "Bogus": "34.0.2",
           "Microsoft.EntityFrameworkCore": "6.0.3",
@@ -2220,6 +2234,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BlazorDictionary.Api.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application.csproj",
+      "msbuildProject": "../../Core/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application/BlazorDictionary.Api.Application.csproj"
     },
     "BlazorDictionary.Api.Domain/1.0.0": {
       "type": "project",
