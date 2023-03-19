@@ -1,3 +1,4 @@
+using BlazorDictionary.Api.Application.Extensions;
 using BlazorDictionary.Infrastructure.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplicationRegistiration();
 builder.Services.AddInfrastructureRegistiration(builder.Configuration);
 
 var app = builder.Build();
