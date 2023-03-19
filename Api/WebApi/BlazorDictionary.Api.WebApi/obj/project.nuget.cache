@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mS9bddjdwlaJbCLOrQ/dTnDd44Z/e1yN3stnACNEJkv/pE4AkhibNtFPdSdzOFp6ks637kundn4on7InS/0bkA==",
+  "dgSpecHash": "ntOL8KNoTwH+VhR8jtIz/6848HTOCY8E7Wxb7asmeLboAocO6R6Eduf90sOXwNlT9TSPij0+vNx6o4yWMV0XTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\WebApi\\BlazorDictionary.Api.WebApi\\BlazorDictionary.Api.WebApi.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\MUAZ\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

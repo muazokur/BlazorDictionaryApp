@@ -917,7 +917,10 @@
           "FluentValidation": "10.4.0",
           "FluentValidation.DependencyInjectionExtensions": "10.4.0",
           "MediatR": "10.0.1",
-          "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1"
+          "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.IdentityModel.Tokens": "6.8.0",
+          "System.IdentityModel.Tokens.Jwt": "6.8.0"
         },
         "compile": {
           "bin/placeholder/BlazorDictionary.Api.Application.dll": {}
@@ -942,6 +945,10 @@
       "BlazorDictionary.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MediatR": "10.0.1",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1"
+        },
         "compile": {
           "bin/placeholder/BlazorDictionary.Common.dll": {}
         },

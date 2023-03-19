@@ -10,3 +10,8 @@ C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Applica
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\refint\BlazorDictionary.Api.Application.dll
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.pdb
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\ref\BlazorDictionary.Api.Application.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Api.Domain.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Common.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Api.Domain.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\bin\Debug\net6.0\BlazorDictionary.Common.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\Core\BlazorDictionary.Api.Application\BlazorDictionary.Api.Application\obj\Debug\net6.0\BlazorDictionary.Api.Application.csproj.CopyComplete

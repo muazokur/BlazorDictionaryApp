@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+RTMOwEoiJ1PEJOzwq7rrq8i9hwrT1EDCPlk85IIoiuG3W37NqkdjI8yn5ggVIGPDUBgtBC+U1RU6HtPysZChQ==",
+  "dgSpecHash": "rC2IvdXiEbaeH7uglHWfZ1DZE/A8NM16Q/YfSrqVcI2usZxM59yjbB5XloPTtUf4sUiKzahtdCHXVMp3gZ4nZQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Domain\\BlazorDictionary.Api.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

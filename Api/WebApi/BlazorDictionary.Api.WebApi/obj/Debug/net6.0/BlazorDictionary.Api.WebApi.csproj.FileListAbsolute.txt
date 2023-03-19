@@ -70,3 +70,13 @@ C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebAp
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Infrastructure.Persistence.pdb
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Api.Domain.pdb
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Common.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\MediatR.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Api.Application.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Api.Application.pdb
