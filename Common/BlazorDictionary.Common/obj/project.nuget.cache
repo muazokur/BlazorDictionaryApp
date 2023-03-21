@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "D/7v34HLTkZY1W1m7qIvQLHZj3OGVVZbCqs0JgYKAlIwVK1LKWBtjFeE4p8neClm/b6QMXCl2AkvtMW6goR9yw==",
+  "dgSpecHash": "9ogCfHseQ1J6Iyl3tQpkCgwZ2QDJ9wpFi1XrnxYPcQTqoZH92oRfB+DsoEKDSifZVA/htOLXPtimouJGX2kOqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Common\\BlazorDictionary.Common\\BlazorDictionary.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
-    "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\rabbitmq.client\\6.2.4\\rabbitmq.client.6.2.4.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

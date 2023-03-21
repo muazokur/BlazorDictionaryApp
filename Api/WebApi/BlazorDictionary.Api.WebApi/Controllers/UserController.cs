@@ -25,5 +25,23 @@ namespace BlazorDictionary.Api.WebApi.Controllers
             return Ok(res);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
+        {
+            var guid = await mediator.Send(command);
+
+            return Ok(guid);
+        }
+
+
+        [HttpPost]
+        [Route("Update")]
+        public async Task<IActionResult> Update([FromBody] CreateUserCommand command)
+        {
+            var guid = await mediator.Send(command);
+
+            return Ok(guid);
+        }
+
     }
 }

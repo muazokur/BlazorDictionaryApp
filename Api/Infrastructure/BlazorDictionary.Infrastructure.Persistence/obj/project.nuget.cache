@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dJ70MZAp2+KwcWlcT1ZbTS+a00h269zGoqJ3+mHg1MvVwFtWBX1CMbJEnVzFRJoLVmFeyHPpCBUUZiSCvp9qkg==",
+  "dgSpecHash": "AW5f9bZ0Hi83CDZ+d0Gu2sm7s2EVfWVrW+yRbd8ZKij4uq/6wNpiJ18P7cRLX3rXXU2hlHiQ4j2jLn0jJISdMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Infrastructure\\BlazorDictionary.Infrastructure.Persistence\\BlazorDictionary.Infrastructure.Persistence.csproj",
   "expectedPackageFiles": [
@@ -42,11 +42,13 @@
     "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\rabbitmq.client\\6.2.4\\rabbitmq.client.6.2.4.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
@@ -55,6 +57,7 @@
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

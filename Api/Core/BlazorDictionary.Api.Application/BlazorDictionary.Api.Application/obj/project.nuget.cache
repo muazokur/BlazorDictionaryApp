@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jNrKgYDNlDPBMD9bWJ5denOC06T/MoGXOD+/0q1bypFYY2yGhBKNNe5IHddZNoRcTdlY1UE5JvbqMEj3J/U8GQ==",
+  "dgSpecHash": "pOxa5EQGI4xUc1yco22gD6hv56DEvkj4GnwgCFWoc91b0Z984soD0wz0YONR7P4ICgfuZw/vZt37gxqXZZ18oQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Core\\BlazorDictionary.Api.Application\\BlazorDictionary.Api.Application\\BlazorDictionary.Api.Application.csproj",
   "expectedPackageFiles": [
@@ -19,9 +19,12 @@
     "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\rabbitmq.client\\6.2.4\\rabbitmq.client.6.2.4.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\MUAZ\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\MUAZ\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\MUAZ\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -80,3 +80,4 @@ C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebAp
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Api.Application.dll
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\BlazorDictionary.Api.Application.pdb
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Api\WebApi\BlazorDictionary.Api.WebApi\bin\Debug\net6.0\RabbitMQ.Client.dll
