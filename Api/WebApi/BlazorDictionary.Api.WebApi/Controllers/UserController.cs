@@ -49,14 +49,14 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [Route("Confirm")]
         public async Task<IActionResult> ConfirmEmail(Guid id)
         {
-            var guid = await mediator.Send(new ConfirmEmailCommand() { ConfirmationId=id} );
+            var guid = await mediator.Send(new ConfirmEmailCommand() { ConfirmationId = id });
 
             return Ok(guid);
         }
 
         [HttpPost]
         [Route("ChangePassword")]
-        public async Task<IActionResult> ChangePassword([FromBody]ChangeUserPasswordCommand command)
+        public async Task<IActionResult> ChangePassword([FromBody] ChangeUserPasswordCommand command)
         {
             if (!command.UserId.HasValue)
                 command.UserId = UserId;

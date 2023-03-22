@@ -1,4 +1,5 @@
-﻿using BlazorDictionary.Common.Models.RequestModels;
+﻿using BlazorDictionary.Api.Application.Features.Queries.GetEntries;
+using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,20 @@ namespace BlazorDictionary.Api.WebApi.Controllers
     public class EntryContoller : BaseController
     {
         private readonly IMediator mediator;
+
+        public EntryContoller(IMediator mediator)
+        {
+            this.mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetEntries([FromQuery] GetEntriesQuery query)
+        {
+            var entries = await mediator.Send(query);
+
+            return Ok(entries);
+        }
+
 
         [HttpPost]
         [Route("CreateEntryComment")]

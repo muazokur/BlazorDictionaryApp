@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AW5f9bZ0Hi83CDZ+d0Gu2sm7s2EVfWVrW+yRbd8ZKij4uq/6wNpiJ18P7cRLX3rXXU2hlHiQ4j2jLn0jJISdMQ==",
+  "dgSpecHash": "nrtoxjqGPW+lyW6Kx+ZmBXCss5769Ojaza9TJLcnVYAAJ+wSxJ0CrzJfPmrn33W2YgOkBEi6thL9deHiEVgc2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Api\\Infrastructure\\BlazorDictionary.Infrastructure.Persistence\\BlazorDictionary.Infrastructure.Persistence.csproj",
   "expectedPackageFiles": [
