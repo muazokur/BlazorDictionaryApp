@@ -1,4 +1,6 @@
-﻿using BlazorDictionary.Common.Models.RequestModels;
+﻿using BlazorDictionary.Api.Application.Features.Commands.User.ConfirmEmail;
+using BlazorDictionary.Common.Event.User;
+using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,6 +39,24 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [HttpPost]
         [Route("Update")]
         public async Task<IActionResult> Update([FromBody] CreateUserCommand command)
+        {
+            var guid = await mediator.Send(command);
+
+            return Ok(guid);
+        }
+
+        [HttpPost]
+        [Route("Confirm")]
+        public async Task<IActionResult> ConfirmEmail(Guid id)
+        {
+            var guid = await mediator.Send(new ConfirmEmailCommand() { ConfirmationId=id} );
+
+            return Ok(guid);
+        }
+
+        [HttpPost]
+        [Route("ChangePassword")]
+        public async Task<IActionResult> ChangePassword([FromBody]ChangeUserPasswordCommand command)
         {
             var guid = await mediator.Send(command);
 
