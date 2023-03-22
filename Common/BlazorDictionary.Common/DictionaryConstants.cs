@@ -13,5 +13,10 @@ namespace BlazorDictionary.Common
 
         public const string UserExcangeName = "UserExchange";
         public const string UserEmailExcangedQueueName = "UserEmailExchangedQueue";
+
+        public const string FavExcahangeName = "FavExcahangeName";
+        public const string CreateEntryCommentFavQueueName= "CreateEntryCommentFavQueue";
+
+
     }
 }
