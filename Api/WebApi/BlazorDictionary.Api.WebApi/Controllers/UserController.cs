@@ -18,7 +18,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody]LoginUserCommand command)
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
             var res = await mediator.Send(command);
 
@@ -29,7 +29,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
-
+            
             return Ok(guid);
         }
 
@@ -42,6 +42,5 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
             return Ok(guid);
         }
-
     }
 }

@@ -2,6 +2,7 @@
 using BlazorDictionary.Api.Application.Interfaces.Repositories;
 using BlazorDictionary.Common;
 using BlazorDictionary.Common.Event.User;
+using BlazorDictionary.Common.Infrastructure;
 using BlazorDictionary.Common.Infrastructure.Exceptions;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
@@ -30,6 +31,8 @@ namespace BlazorDictionary.Api.Application.Features.Commands.User.Create
 
             if (existUser is not null)
                 throw new DatabaseValidationException("User already exist!");
+
+            request.Password=PasswordEncryptor.Encrypt(request.Password);
 
             var dbUser = mapper.Map<Domain.Models.User>(request);
 
