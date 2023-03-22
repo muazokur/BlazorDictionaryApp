@@ -15,7 +15,26 @@ namespace BlazorDictionary.Common
         public const string UserEmailExcangedQueueName = "UserEmailExchangedQueue";
 
         public const string FavExcahangeName = "FavExcahangeName";
+        public const string CreateEntryFavQueueName= "CreateEntryFavQueue";
         public const string CreateEntryCommentFavQueueName= "CreateEntryCommentFavQueue";
+
+        public const string DeleteEntryFavQueueName= "DeleteEntryFavQueue";
+        public const string DeleteEntryVoteQueueName = "DeleteEntrtVoteQueue";
+
+        public const string CreateEntryCommentVoteQueueName = "CreateEntryCommentVoteQueue";
+        public const string DeleteEntryCommentFavQueueName = "DeleteEntryCommentFavQueue";
+
+        public const string DeleteEntryCommentVoteQueueName = "DeleteEntryCommentVoteQueue";
+
+
+
+
+        public const string VoteExchangeName = "VoteExchange";
+        public const string CreateEntryVoteQueueName = "CreateEntryVoteQueue";
+
+
+
+
 
 
     }
