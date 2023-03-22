@@ -26,9 +26,6 @@ namespace BlazorDictionary.Common
 
         public const string DeleteEntryCommentVoteQueueName = "DeleteEntryCommentVoteQueue";
 
-
-
-
         public const string VoteExchangeName = "VoteExchange";
         public const string CreateEntryVoteQueueName = "CreateEntryVoteQueue";
 

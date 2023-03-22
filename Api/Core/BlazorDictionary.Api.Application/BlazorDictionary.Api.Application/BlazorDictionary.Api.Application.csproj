@@ -23,8 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Commands\EntryComment\DeleteVote\" />
-    <Folder Include="Features\Commands\User\ConfitmEmail\" />
     <Folder Include="Features\Queries\" />
   </ItemGroup>
 

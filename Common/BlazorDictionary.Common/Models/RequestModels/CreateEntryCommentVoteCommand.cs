@@ -16,7 +16,7 @@ namespace BlazorDictionary.Common.Models.RequestModels
 
         public CreateEntryCommentVoteCommand(Guid entryId, Guid createdBy, VoteType voteType)
         {
-            EntryId = entryId;
+            EntryCommentId = entryId;
             CreatedBy = createdBy;
             VoteType = voteType;
         }

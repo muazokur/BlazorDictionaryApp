@@ -7,7 +7,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EntryContoller : ControllerBase
+    public class EntryContoller : BaseController
     {
         private readonly IMediator mediator;
 
@@ -15,6 +15,9 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [Route("CreateEntryComment")]
         public async Task<IActionResult> CreateEntry([FromBody] CreateEntryCommand command)
         {
+            if (!command.CreatedById.HasValue)
+                command.CreatedById = UserId;
+
             var result = await mediator.Send(command);
 
             return Ok(result);
@@ -24,6 +27,9 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [Route("CreateEntry")]
         public async Task<IActionResult> CreateEntryComment([FromBody] CreateEntryCommentCommand command)
         {
+            if (!command.CreatedById.HasValue)
+                command.CreatedById = UserId;
+
             var result = await mediator.Send(command);
 
             return Ok(result);
