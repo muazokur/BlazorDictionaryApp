@@ -1,6 +1,6 @@
 ﻿using BlazorDictionary.Common;
 using BlazorDictionary.Common.Events.Entry;
-using BlazorDictionary.Common.Infrastructure.Exceptions;
+using BlazorDictionary.Common.Infrastructure.Extensions;
 using MediatR;
 using System;
 using System.Collections.Generic;

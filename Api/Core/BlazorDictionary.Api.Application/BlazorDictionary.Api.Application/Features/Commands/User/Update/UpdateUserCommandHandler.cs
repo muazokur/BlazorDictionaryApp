@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlazorDictionary.Common.Infrastructure.Extensions;
 
 namespace BlazorDictionary.Api.Application.Features.Commands.User.Update
 {

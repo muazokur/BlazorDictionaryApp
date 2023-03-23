@@ -25,7 +25,6 @@ namespace BlazorDictionary.Api.Application.Features.Queries.SearchBySucject
 
             #region optionalSearch
             entryRepository.Get(i => i.Subject.StartsWith(""));
-
             #endregion
 
             var result =entryRepository.Get(i=>EF.Functions.Like(i.Subject, $"{request.SearchText}%")).Select(i=>new SearchEntryViewModel()

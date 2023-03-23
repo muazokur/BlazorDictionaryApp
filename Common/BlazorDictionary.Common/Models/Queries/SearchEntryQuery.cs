@@ -15,5 +15,10 @@ namespace BlazorDictionary.Common.Models.Queries
         {
             SearchText = searchText;
         }
+
+        public SearchEntryQuery()
+        {
+
+        }
     }
 }

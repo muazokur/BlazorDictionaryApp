@@ -13,7 +13,7 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetUserDetail
         public Guid UserId { get; set; }
         public string UserName { get; set; }
 
-        public GetUserDetailQuery(Guid userId, string userName)
+        public GetUserDetailQuery(Guid userId, string userName=null)
         {
             UserId = userId;
             UserName = userName;

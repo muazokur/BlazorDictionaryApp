@@ -2,7 +2,7 @@
 using BlazorDictionary.Api.Application.Interfaces.Repositories;
 using BlazorDictionary.Common;
 using BlazorDictionary.Common.Events.EntryComment;
-using BlazorDictionary.Common.Infrastructure.Exceptions;
+using BlazorDictionary.Common.Infrastructure.Extensions;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
 using System;

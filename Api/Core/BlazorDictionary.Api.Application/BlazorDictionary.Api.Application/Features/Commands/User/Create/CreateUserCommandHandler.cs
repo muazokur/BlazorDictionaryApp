@@ -4,6 +4,7 @@ using BlazorDictionary.Common;
 using BlazorDictionary.Common.Event.User;
 using BlazorDictionary.Common.Infrastructure;
 using BlazorDictionary.Common.Infrastructure.Exceptions;
+using BlazorDictionary.Common.Infrastructure.Extensions;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
 using System;
