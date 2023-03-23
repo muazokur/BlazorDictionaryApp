@@ -45,7 +45,10 @@ namespace BlazorDictionary.Api.WebApi.Infrastructure.Extensions
             var res = new
             {
                 HttpStatusCode = (int)statusCode,
-                Detail = includeExceptionDetail ? exception.ToString() : message;
+                Detail = includeExceptionDetail ? exception.ToString() : message
+            };
+
+            await WriteResponse(context,statusCode, res);
         }
 
         private static async Task WriteResponse(HttpContext context, HttpStatusCode statusCode, object responseObj)
