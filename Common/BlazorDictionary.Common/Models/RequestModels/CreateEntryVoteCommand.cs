@@ -12,6 +12,13 @@ namespace BlazorDictionary.Common.Models.RequestModels
     {
         public Guid EntryId { get; set; }
         public Guid CreatedBy { get; set; }
-        public VoteType VoteType { get; set; } 
+        public VoteType VoteType { get; set; }
+
+        public CreateEntryVoteCommand(Guid entryId, Guid createdBy, VoteType voteType)
+        {
+            EntryId = entryId;
+            CreatedBy = createdBy;
+            VoteType = voteType;
+        }
     }
 }
