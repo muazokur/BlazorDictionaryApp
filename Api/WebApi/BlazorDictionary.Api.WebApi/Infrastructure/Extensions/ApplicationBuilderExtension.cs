@@ -10,21 +10,27 @@ namespace BlazorDictionary.Api.WebApi.Infrastructure.Extensions
         public static IApplicationBuilder ConfigureExceptionHandling(this IApplicationBuilder app,
             bool includeExceptionDetails = false, bool useDefaultHandlingResponse = true, Func<HttpContext, Exception, Task> handleException = null)
         {
-            app.Run(context =>
+            app.UseExceptionHandler(options =>
             {
-                var exceptionObject = context.Features.Get<IExceptionHandlerFeature>();
-                if (!useDefaultHandlingResponse && handleException == null)
+                options.Run(context =>
                 {
-                    throw new ArgumentNullException(nameof(handleException), $"{nameof(handleException)} can not be null when " +
-                        $"{nameof(useDefaultHandlingResponse)} is false");
-                }
-                if (!useDefaultHandlingResponse && handleException != null)
-                    return handleException(context, exceptionObject.Error);
+                    var exceptionObject = context.Features.Get<IExceptionHandlerFeature>();
+                    if (!useDefaultHandlingResponse && handleException == null)
+                    {
+                        throw new ArgumentNullException(nameof(handleException), $"{nameof(handleException)} can not be null when " +
+                            $"{nameof(useDefaultHandlingResponse)} is false");
+                    }
+                    if (!useDefaultHandlingResponse && handleException != null)
+                        return handleException(context, exceptionObject.Error);
 
-                return DefaultHandleException(context, exceptionObject.Error, includeExceptionDetails);
+                    return DefaultHandleException(context, exceptionObject.Error, includeExceptionDetails);
+                });
+
             });
 
             return app;
+
+
         }
 
         private static async Task DefaultHandleException(HttpContext context, Exception exception, bool includeExceptionDetail)
