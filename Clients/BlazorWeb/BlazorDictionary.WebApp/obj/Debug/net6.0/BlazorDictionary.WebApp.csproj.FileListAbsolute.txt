@@ -818,3 +818,4 @@ C:\Users\MUAZ\Desktop\BlazorDictionary\src\Clients\BlazorWeb\BlazorDictionary.We
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Clients\BlazorWeb\BlazorDictionary.WebApp\obj\Debug\net6.0\refint\BlazorDictionary.WebApp.dll
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Clients\BlazorWeb\BlazorDictionary.WebApp\obj\Debug\net6.0\BlazorDictionary.WebApp.pdb
 C:\Users\MUAZ\Desktop\BlazorDictionary\src\Clients\BlazorWeb\BlazorDictionary.WebApp\obj\Debug\net6.0\ref\BlazorDictionary.WebApp.dll
+C:\Users\MUAZ\Desktop\BlazorDictionary\src\Clients\BlazorWeb\BlazorDictionary.WebApp\obj\Debug\net6.0\BlazorDictionary.WebApp.MvcApplicationPartsAssemblyInfo.cs
