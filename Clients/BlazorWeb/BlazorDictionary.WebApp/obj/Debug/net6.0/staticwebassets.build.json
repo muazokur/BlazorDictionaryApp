@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S+Nk2qOHcCstweW+FH0cEQ0+B5SbbSH+H93FqD9LDJg=",
+  "Hash": "cr9QKYr/INevRhJwE10Pcprh+O/RbpelAhujNNAGSI4=",
   "Source": "BlazorDictionary.WebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7461,6 +7461,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\index_style.css",
+      "SourceId": "BlazorDictionary.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/index_style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index_style.css"
     },
     {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",

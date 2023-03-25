@@ -19,10 +19,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await RefleshList();
+        await RefreshList();
     }
 
-    public async Task RefleshList()
+    public async Task RefreshList()
     {
         entries = await entryService.GetEntries();
 
