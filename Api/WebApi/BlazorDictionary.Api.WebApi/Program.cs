@@ -22,6 +22,13 @@ builder.Services.ConfigureAuth(builder.Configuration);
 builder.Services.AddApplicationRegistiration();
 builder.Services.AddInfrastructureRegistiration(builder.Configuration);
 
+//AddCors
+builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+{
+    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+}));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,6 +45,8 @@ app.ConfigureExceptionHandling(app.Environment.IsDevelopment());
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseCors("MyPolicy");
 
 app.MapControllers();
 
