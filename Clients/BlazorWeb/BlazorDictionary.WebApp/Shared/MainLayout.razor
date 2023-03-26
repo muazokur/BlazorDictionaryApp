@@ -21,10 +21,11 @@
             </div>
 
             <button type="button" class="btn btn-sozluk btn-success"
-                @onclick="@Search"
-                @onfocusout="@OnSearchFocusOut">
+                    @onclick="@Search"
+                    @onfocusout="@OnSearchFocusOut">
                 <i class="fa fa-search h-75"></i>
             </button>
+
         </div>
 
         @if (showSearchResult)
@@ -40,7 +41,7 @@
                 }
 
             </ul>
-        } 
+        }
 
     </div>
 
@@ -53,15 +54,16 @@
                 <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Logout" @onclick="@NavigateLogoutPage"/>
             </div>
         </Authorized>
-        <NotAuthorized>
-            <div class="top-nav">*@
-                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @*@onclick="@NavigateLoginPage*@" />
+        <NotAuthorized>*@
 
-            @*</div>
-        </NotAuthorized>
+    <div class="top-nav">
+        <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @onclick="@NavigateLoginPage" />
+    </div>
+    
+    @*        </NotAuthorized>
 
 
-    </AuthorizeView>*@
+        </AuthorizeView>*@
 
 
     <div class="sub-nav">
@@ -84,9 +86,9 @@
 
 <div class="page">
     <div class="sidebar">
-        <h5 class="text-white text-center sidebar-heading">@EntriesSubject</h5>
+        <h5 class="text-white text-center siderbar-heading">@EntriesSubject</h5>
 
-        <a class="more-data" @onclick="@RefreshEntries">reflesh</a>
+        <a class="more-data" @onclick="@RefreshEntries">refresh</a>
 
         <ul class="list-group">
             <EntriesComponent @ref="@entriesComponent" />
@@ -163,6 +165,10 @@
             return;
 
         searchResult = await entryService.SearchBySubject(searchText);
+
+        showSearchResult = true;
+
+        searchText=string.Empty;
     }
 
     private async Task GoEntry(Guid entryId)

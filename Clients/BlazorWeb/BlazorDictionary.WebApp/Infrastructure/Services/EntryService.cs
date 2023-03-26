@@ -80,7 +80,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
 
         public async Task<List<SearchEntryViewModel>> SearchBySubject(string searchText)
         {
-            var result = await client.GetFromJsonAsync<List<SearchEntryViewModel>>($"/api/entry/Search?searchText={searchText}");
+            var result = await client.GetFromJsonAsync<List<SearchEntryViewModel>>($"/api/EntryContoller/Search?SearchText={searchText}");
 
             return result;
         }
