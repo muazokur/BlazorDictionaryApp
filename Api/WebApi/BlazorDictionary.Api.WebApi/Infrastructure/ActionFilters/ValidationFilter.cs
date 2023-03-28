@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using BlazorDictionary.Common.Infrastructure.Results;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace BlazorDictionary.Api.WebApi.Infrastructure.ActionFilters
 {
@@ -13,7 +15,9 @@ namespace BlazorDictionary.Api.WebApi.Infrastructure.ActionFilters
                     .Select(x => !string.IsNullOrEmpty(x.ErrorMessage) ? x.ErrorMessage : x.Exception?.Message)
                     .Distinct().ToList();
 
-                return;
+                var result = new ValidationResponseModel(messages);
+                context.Result=new BadRequestObjectResult(result);
+                return ;
             }
             await next();
         }

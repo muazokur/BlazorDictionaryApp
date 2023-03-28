@@ -48,21 +48,27 @@
     <AuthorizeView>
         <Authorized>
             <div class="top-nav">
-                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Create Entry" @onclick="@NavigateCreateEntryPage"/>
-                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Me" @onclick="@NavigateMePage"/>
-                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Logout" @onclick="@NavigateLogoutPage"/>
+                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Create Entry" @onclick="@NavigateCreateEntryPage" />
+                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Me" @onclick="@NavigateMePage" />
+                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Logout" @onclick="@NavigateLogoutPage" />
             </div>
         </Authorized>
+
         <NotAuthorized>
 
-    <div class="top-nav">
-        <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @onclick="@NavigateLoginPage" />
-    </div>
-    
-            </NotAuthorized>
+            <div class="top-nav">
+                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @onclick="@NavigateLoginPage" />
+            </div>
+
+        </NotAuthorized>
 
 
-        </AuthorizeView>
+    </AuthorizeView>
+
+    @*<div class="top-nav">
+            <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Logout" @onclick="@NavigateLogoutPage" />
+
+        </div>*@
 
 
     <div class="sub-nav">
@@ -167,7 +173,7 @@
 
         showSearchResult = true;
 
-        searchText=string.Empty;
+        searchText = string.Empty;
     }
 
     private async Task GoEntry(Guid entryId)

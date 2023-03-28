@@ -36,6 +36,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpblBhZ2VzXEVudHJpZXNDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/UserPages/UserLoginPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclBhZ2VzXFVzZXJMb2dpblBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/UserPages/UserLogoutPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclBhZ2VzXFVzZXJMb2dvdXRQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

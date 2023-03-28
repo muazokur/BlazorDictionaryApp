@@ -48,7 +48,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Auth
             NotifyAuthenticationStateChanged(authState);
         }
 
-        public void NotifyUserLogut()
+        public void NotifyUserLogout()
         {
             var authState = Task.FromResult(anonymous);
             NotifyAuthenticationStateChanged(authState);

@@ -54,7 +54,7 @@
             },
             "Microsoft.AspNetCore.Components.Authorization": {
               "target": "Package",
-              "version": "[6.0.14, )"
+              "version": "[6.0.15, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",

@@ -2,9 +2,11 @@
 using BlazorDictionary.Common.Infrastructure.Results;
 using BlazorDictionary.Common.Models.Queries;
 using BlazorDictionary.Common.Models.RequestModels;
+using BlazorDictionary.WebApp.Infrastructure.Auth;
 using BlazorDictionary.WebApp.Infrastructure.Extensions;
 using BlazorDictionary.WebApp.Infrastructure.Services.Interfaces;
 using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -14,11 +16,13 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
     {
         private readonly HttpClient client;
         private readonly ISyncLocalStorageService syncLocalStorageService;
+        private readonly AuthenticationStateProvider authenticationStateProvider;
 
-        public IdentityService(HttpClient client, ISyncLocalStorageService syncLocalStorageService)
+        public IdentityService(HttpClient client, ISyncLocalStorageService syncLocalStorageService, AuthenticationStateProvider authenticationStateProvider)
         {
             this.client = client;
             this.syncLocalStorageService = syncLocalStorageService;
+            this.authenticationStateProvider = authenticationStateProvider;
         }
 
         public bool IsLoggedIn => !string.IsNullOrEmpty(GetUserToken());
@@ -64,8 +68,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
                 syncLocalStorageService.SetUserName(response.UserName);
                 syncLocalStorageService.SetUserId(response.Id);
 
-                //TODO Check after auth
-                //((AuthStateProvider)authStateProvider).NotifyUserLogin(response.UserName, response.Id);
+                ((AuthStateProvider)authenticationStateProvider).NotifyUserLogin(response.UserName, response.Id);
 
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", response.UserName);
 
@@ -80,8 +83,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
             syncLocalStorageService.RemoveItem(LocalStorageExtension.UserName);
             syncLocalStorageService.RemoveItem(LocalStorageExtension.UserId);
 
-            // TODO Check after auth
-            //((AuthStateProvider)authStateProvider).NotifyUserLogout();
+            ((AuthStateProvider)authenticationStateProvider).NotifyUserLogout();
 
             client.DefaultRequestHeaders.Authorization = null;
         }

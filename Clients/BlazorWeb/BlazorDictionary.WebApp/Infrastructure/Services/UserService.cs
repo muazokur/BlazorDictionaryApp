@@ -19,21 +19,21 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
 
         public async Task<UserDetailViewModel> GetUserDetail(Guid? id)
         {
-            var userDetail = await client.GetFromJsonAsync<UserDetailViewModel>($"/api/user/{id}");
+            var userDetail = await client.GetFromJsonAsync<UserDetailViewModel>($"/api/User/{id}");
 
             return userDetail;
         }
 
         public async Task<UserDetailViewModel> GetUserDetail(string userName)
         {
-            var userDetail = await client.GetFromJsonAsync<UserDetailViewModel>($"/api/user/username/{userName}");
+            var userDetail = await client.GetFromJsonAsync<UserDetailViewModel>($"/api/User/UserName/{userName}");
 
             return userDetail;
         }
 
         public async Task<bool> UpdateUser(UserDetailViewModel user)
         {
-            var res = await client.PostAsJsonAsync($"/api/user/update", user);
+            var res = await client.PostAsJsonAsync($"/api/User/Update", user);
 
             return res.IsSuccessStatusCode;
         }
@@ -41,7 +41,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
         public async Task<bool> ChangeUserPasssword(string oldPassword, string newPassword)
         {
             var command = new ChangeUserPasswordCommand(null, oldPassword, newPassword);
-            var httpResponse = await client.PostAsJsonAsync($"/api/user/ChangePassword", command);
+            var httpResponse = await client.PostAsJsonAsync($"/api/User/ChangePassword", command);
 
             if (httpResponse != null && !httpResponse.IsSuccessStatusCode)
             {
