@@ -47,13 +47,15 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
             string responseStr;
             var httpResponse = await client.PostAsJsonAsync("/api/User/Login", command);
 
-            if (httpResponse != null && httpResponse.IsSuccessStatusCode)
+            if (httpResponse != null && !httpResponse.IsSuccessStatusCode)
             {
                 if (httpResponse.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
                     responseStr = await httpResponse.Content.ReadAsStringAsync();
                     var validation = JsonSerializer.Deserialize<ValidationResponseModel>(responseStr);
                     responseStr = validation.FlattenErrors;
+                    // TODO 
+                    // validation is null!
                     throw new DatabaseValidationException(responseStr);
                 }
                 return false;

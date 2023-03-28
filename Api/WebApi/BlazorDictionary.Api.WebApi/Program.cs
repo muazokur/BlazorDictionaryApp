@@ -1,4 +1,5 @@
 using BlazorDictionary.Api.Application.Extensions;
+using BlazorDictionary.Api.WebApi.Infrastructure.ActionFilters;
 using BlazorDictionary.Api.WebApi.Infrastructure.Extensions;
 using BlazorDictionary.Infrastructure.Persistence.Extensions;
 using FluentValidation.AspNetCore;
@@ -7,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(opt=>opt.Filters.Add<ValidationModelFilter>())
     .AddJsonOptions(opt => 
     {
         opt.JsonSerializerOptions.PropertyNamingPolicy = null;

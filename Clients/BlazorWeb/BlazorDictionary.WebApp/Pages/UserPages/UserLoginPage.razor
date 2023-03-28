@@ -4,7 +4,7 @@
 <div class="login-container">
     <div class="row justify-content-center align-items-start h-100">
         <div class="login-form">
-            <EditForm Model="@loginUserCommand" OnInvalidSubmit="LoginProcess">
+            <EditForm Model="@loginUserCommand" OnValidSubmit="@LoginProcess">
 
                 @if (errorText != string.Empty)
                 {
@@ -13,11 +13,11 @@
                 }
 
                 <div class="form-group">
-                    <input @bind-value="@loginUserCommand.EmailAdress" class="form-control" type="text" placeholder="Email Adress" />
+                    <input @bind-value="loginUserCommand.EmailAdress" class="form-control" type="text" placeholder="Email Adress" />
                 </div>
                 <br />
                 <div class="form-group">
-                    <input @bind-value="@loginUserCommand.Password" class="form-control" type="password" placeholder="Password" />
+                    <input @bind-value="loginUserCommand.Password" class="form-control" type="password" placeholder="Password" />
                 </div>
                 <br />
                 <div class="form-group">
@@ -44,6 +44,8 @@
     private LoginUserCommand loginUserCommand = new();
 
     private string errorText = "";
+    int i = 0;
+
 
     public async Task LoginProcess()
     {

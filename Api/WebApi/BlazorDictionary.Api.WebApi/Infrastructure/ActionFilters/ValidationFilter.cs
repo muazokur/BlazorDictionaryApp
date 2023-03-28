@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace BlazorDictionary.Api.WebApi.Infrastructure.ActionFilters
 {
-    public class ValidationFilter : IAsyncActionFilter
+    public class ValidationModelFilter : IAsyncActionFilter
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
