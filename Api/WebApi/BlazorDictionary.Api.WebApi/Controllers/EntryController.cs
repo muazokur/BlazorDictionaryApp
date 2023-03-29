@@ -14,11 +14,11 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EntryContoller : BaseController
+    public class EntryController : BaseController
     {
         private readonly IMediator mediator;
 
-        public EntryContoller(IMediator mediator)
+        public EntryController(IMediator mediator)
         {
             this.mediator = mediator;
         }

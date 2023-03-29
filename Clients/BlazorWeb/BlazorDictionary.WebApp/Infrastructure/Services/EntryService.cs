@@ -18,14 +18,14 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
 
         public async Task<List<GetEntriesViewModel>> GetEntries()
         {
-            var result = await client.GetFromJsonAsync<List<GetEntriesViewModel>>("/api/EntryContoller?TodaysEntries=false&count=30");
+            var result = await client.GetFromJsonAsync<List<GetEntriesViewModel>>("/api/Entry?TodaysEntries=false&count=30");
 
             return result;
         }
 
         public async Task<GetEntryDetailViewModel> GetEntryDetail(Guid entryId)
         {
-            var result = await client.GetFromJsonAsync<GetEntryDetailViewModel>($"/api/entry/{entryId}");
+            var result = await client.GetFromJsonAsync<GetEntryDetailViewModel>($"/api/Entry/{entryId}");
 
             return result;
         }
@@ -33,7 +33,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
         public async Task<PagedViewModel<GetEntryDetailViewModel>> GetMainPageEntries(int page, int pageSize)
         {
             var result = await client.GetFromJsonAsync<PagedViewModel<GetEntryDetailViewModel>>
-                ($"/api/EntryContoller/MainPageEntries?page={page}&pageSize={pageSize}");
+                ($"/api/Entry/MainPageEntries?page={page}&pageSize={pageSize}");
 
             return result;
         }
@@ -49,9 +49,9 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
         public async Task<PagedViewModel<GetEntryCommentsViewModel>> GetEntryComments(Guid entryId, int page, int pageSize)
         {
             var result = await client.GetFromJsonAsync<PagedViewModel<GetEntryCommentsViewModel>>
-                ($"/api/entry/comments/{entryId}?page={page}&pageSize={pageSize}");
-
-            return result;
+                ($"/api/Entry/Comments/id?id={entryId}&page={page}&pageSize={pageSize}");
+           
+               return result;
         }
 
         public async Task<Guid> CreateEntry(CreateEntryCommand command)
@@ -80,7 +80,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
 
         public async Task<List<SearchEntryViewModel>> SearchBySubject(string searchText)
         {
-            var result = await client.GetFromJsonAsync<List<SearchEntryViewModel>>($"/api/EntryContoller/Search?SearchText={searchText}");
+            var result = await client.GetFromJsonAsync<List<SearchEntryViewModel>>($"/api/Entry/Search?SearchText={searchText}");
 
             return result;
         }

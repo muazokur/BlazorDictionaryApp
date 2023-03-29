@@ -1,0 +1,39 @@
+﻿
+<EditForm Model="@commentCommand" OnValidSubmit="@CreateEntryComment">
+    <div class="entry-comment-add-container">
+        <div class="entry-comment-add">
+            <InputTextArea @bind-Value="commentCommand.Content" class="entry-comment-textarea"/>
+            <div class="entry-comment-actions">
+                <input type="button"  class="btn btn-success btn-sozluk" name="name" value="Send" />
+            </div>
+
+        </div>
+    </div>
+</EditForm>
+
+
+
+
+@code {
+    [Parameter]
+    public Guid? EntryId { get; set; }
+
+    [Parameter]
+    public string EntrySubject { get; set; }
+
+    [Parameter]
+    private string PlaceHolder => $"tell us something about '{EntrySubject}'";
+
+    private CreateEntryCommentCommand commentCommand = new();
+
+    [Parameter]
+    public EventCallback<CreateEntryCommentCommand> OnClicked { get; set; }
+
+
+    public async Task CreateEntryComment()
+    {
+        commentCommand.EntryId = EntryId;
+
+        await OnClicked.InvokeAsync();
+    }
+}
