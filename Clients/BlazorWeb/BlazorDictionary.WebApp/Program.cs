@@ -16,7 +16,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddHttpClient("WebApiClient", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7237");     
-});//TODO AuthTokenHandler will be here
+}).AddHttpMessageHandler<AuthTokenHandler>();
 
 builder.Services.AddScoped(sp =>
 {
@@ -24,6 +24,8 @@ builder.Services.AddScoped(sp =>
 
     return clientFactory.CreateClient("WebApiClient");
 });
+
+builder.Services.AddScoped<AuthTokenHandler>();
 
 builder.Services.AddTransient<IVoteService, VoteService>();
 builder.Services.AddTransient<IEntryService, EntryService>();

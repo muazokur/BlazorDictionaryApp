@@ -22,8 +22,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureAuth(builder.Configuration);
 
+
 builder.Services.AddApplicationRegistiration();
 builder.Services.AddInfrastructureRegistiration(builder.Configuration);
+
 
 //AddCors
 builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>

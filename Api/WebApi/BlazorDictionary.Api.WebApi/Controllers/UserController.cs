@@ -3,6 +3,7 @@ using BlazorDictionary.Api.Application.Features.Queries.GetUserDetail;
 using BlazorDictionary.Common.Event.User;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +46,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
@@ -55,6 +57,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("Update")]
+        [Authorize]
         public async Task<IActionResult> Update([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
@@ -73,6 +76,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("ChangePassword")]
+        [Authorize]
         public async Task<IActionResult> ChangePassword([FromBody] ChangeUserPasswordCommand command)
         {
             if (!command.UserId.HasValue)
