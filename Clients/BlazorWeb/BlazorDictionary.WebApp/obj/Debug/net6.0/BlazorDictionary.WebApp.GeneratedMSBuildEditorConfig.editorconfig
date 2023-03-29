@@ -24,8 +24,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/Entry/Components/EntryFooterAuthorComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlcQ29tcG9uZW50c1xFbnRyeUZvb3RlckF1dGhvckNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/Entry/Components/RateComponents/EntryFooterFavoriteComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlcQ29tcG9uZW50c1xSYXRlQ29tcG9uZW50c1xFbnRyeUZvb3RlckZhdm9yaXRlQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/Entry/Components/RateComponents/EntryFooterRateFavoriteComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlcQ29tcG9uZW50c1xSYXRlQ29tcG9uZW50c1xFbnRyeUZvb3RlclJhdGVGYXZvcml0ZUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/Entry/EntryViewerComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlcRW50cnlWaWV3ZXJDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/Entry/MainPageEntryListComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlcTWFpblBhZ2VFbnRyeUxpc3RDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/FetchData.razor]
