@@ -33,7 +33,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
         public async Task<PagedViewModel<GetEntryDetailViewModel>> GetMainPageEntries(int page, int pageSize)
         {
             var result = await client.GetFromJsonAsync<PagedViewModel<GetEntryDetailViewModel>>
-                ($"/api/entry/mainpageentries?page={page}&pageSize={pageSize}");
+                ($"/api/EntryContoller/MainPageEntries?page={page}&pageSize={pageSize}");
 
             return result;
         }

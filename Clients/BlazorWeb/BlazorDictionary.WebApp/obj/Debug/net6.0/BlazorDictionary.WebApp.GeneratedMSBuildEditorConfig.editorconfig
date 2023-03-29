@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/EntryComment/Components/EntryCommentViewerComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlDb21tZW50XENvbXBvbmVudHNcRW50cnlDb21tZW50Vmlld2VyQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MUAZ/Desktop/BlazorDictionary/src/Clients/BlazorWeb/BlazorDictionary.WebApp/Pages/Entry/Components/EntryFooterAuthorComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cnlcQ29tcG9uZW50c1xFbnRyeUZvb3RlckF1dGhvckNvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

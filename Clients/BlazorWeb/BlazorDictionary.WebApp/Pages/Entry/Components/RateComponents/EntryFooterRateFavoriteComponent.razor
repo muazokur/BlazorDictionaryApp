@@ -9,10 +9,10 @@
         </a>
 
         <a class="p-1" title="Down Vote!">
-            <span class="oi oi-arrow-top entry-vote @(VoteType==VoteType.DownVote ? "text-danger":"text-secondary" ) " @onclick="(()=>DownClicked())"></span>
+            <span class="oi oi-arrow-down entry-vote @(VoteType==VoteType.DownVote ? "text-danger":"text-secondary" ) " @onclick="(()=>DownClicked())"></span>
         </a>
 
-        <EntryFooterFavoriteComponent EntryId="@EntryId"
+        <EntryFooterFavoriteComponent EntryId="@EntryId.Value"
                                       FavoritedCount="@FavoritedCount"
                                       IsFavorited="@IsFavorited"
                                       OnFavClicked="@OnFavClicked" />

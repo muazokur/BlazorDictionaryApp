@@ -34,7 +34,7 @@
 
         var eventArgs = new FavClickedEventArgs();
 
-        eventArgs.EntryId = EntryId;
+        eventArgs.EntryId = EntryId.Value;
         eventArgs.IsFaved = !IsFavorited;
 
         await OnFavClicked.InvokeAsync(eventArgs);

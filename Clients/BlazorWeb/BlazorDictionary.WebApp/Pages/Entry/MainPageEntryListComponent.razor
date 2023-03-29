@@ -20,7 +20,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await entryService.GetMainPageEntries(1, 20);
+        entries=await entryService.GetMainPageEntries(1, 20);
         // TODO Pagination will be handled
     }
 }
