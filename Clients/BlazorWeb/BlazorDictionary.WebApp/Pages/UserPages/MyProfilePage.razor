@@ -1,0 +1,50 @@
+﻿@page "/profile/{userName}"
+@page "/profile/{UserId:guid}"
+@page "/me"
+
+<BlazorDictionary.WebApp.Pages.UserPages.Components.UserProfileDetailComponent UserId="@UserId" UserName="@UserName"/>
+<br />
+
+
+@if (entries is not null)
+{
+    foreach (var entry in entries.Results)
+    {
+        <EntryViewerComponent Entry="@entry" MyEntries="true" />
+        <br />
+    }
+    <PaginationComponent TotalPage="@entries.PageInfo.TotolPageCount"
+                         CurrentPage="@currentPage"
+                         OnPageChanged="@OnPageChanged" />
+
+}
+
+
+@code {
+    [Inject]
+    IEntryService entryService { get; set; }
+
+    PagedViewModel<GetEntryDetailViewModel> entries;
+
+    [Parameter]
+    public string UserName { get; set; }
+
+    [Parameter]
+    public Guid UserId { get; set; }
+
+
+    private int currentPage = 1;
+
+    public async Task OnPageChanged(int pageNumber)
+    {
+        entries = await entryService.GetProfilPageEntries(pageNumber, 20);
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        entries = await entryService.GetProfilPageEntries(currentPage, 20, UserName);
+    }
+
+
+}
