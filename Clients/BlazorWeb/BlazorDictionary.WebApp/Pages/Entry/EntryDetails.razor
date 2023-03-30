@@ -68,7 +68,7 @@
 
     private async Task RefreshComments(int pageNumber)
     {
-        comments = await entryService.GetEntryComments(entry.Id, pageNumber, 3);
+        comments = await entryService.GetEntryComments(entry.Id, pageNumber, 10);
     }
 
 }

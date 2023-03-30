@@ -84,7 +84,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
 
         [HttpPost]
-        [Route("CreateEntryComment")]
+        [Route("CreateEntry")]
         [Authorize]
 
         public async Task<IActionResult> CreateEntry([FromBody] CreateEntryCommand command)
@@ -98,7 +98,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("CreateEntry")]
+        [Route("CreateEntryComment")]
         [Authorize]
 
         public async Task<IActionResult> CreateEntryComment([FromBody] CreateEntryCommentCommand command)

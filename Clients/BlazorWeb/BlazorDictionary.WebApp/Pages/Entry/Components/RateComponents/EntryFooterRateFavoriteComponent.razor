@@ -8,8 +8,9 @@
             <span class="oi oi-arrow-top entry-vote @(VoteType==VoteType.UpVote ? "text-success":"text-secondary") " @onclick="(()=>UpClicked())"> </span>
         </a>
 
+
         <a class="p-1" title="Down Vote!">
-            <span class="oi oi-arrow-down entry-vote @(VoteType==VoteType.DownVote ? "text-danger":"text-secondary" ) " @onclick="(()=>DownClicked())"></span>
+            <span class="oi oi-arrow-bottom entry-vote @(VoteType==VoteType.DownVote ? "text-danger":"text-secondary" ) " @onclick="(()=>DownClicked())"></span>
         </a>
 
         <EntryFooterFavoriteComponent EntryId="@EntryId.Value"
@@ -26,7 +27,7 @@
     ISyncLocalStorageService localStorage { get; set; }
 
     [Parameter]
-    public Common.ViewModels.VoteType VoteType { get; set; }
+    public Common.ViewModels.VoteType VoteType { get; set; } = VoteType.None;
 
     [Parameter]
     public EventCallback<FavClickedEventArgs> OnFavClicked { get; set; }
