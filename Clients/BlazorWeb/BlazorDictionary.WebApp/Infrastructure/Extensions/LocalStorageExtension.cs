@@ -46,12 +46,12 @@ namespace BlazorDictionary.WebApp.Infrastructure.Extensions
 
         public static void SetUserId(this ISyncLocalStorageService localStorageService, Guid id)
         {
-            localStorageService.SetItem(UserName,id);
+            localStorageService.SetItem(UserId, id);
         }
 
         public static async Task SetUserId(this ILocalStorageService localStorageService, Guid id)
         {
-            await localStorageService.SetItemAsync(UserName, id);
+            await localStorageService.SetItemAsync(UserId, id);
         }
 
         public static string GetToken(this ISyncLocalStorageService localStorageService)

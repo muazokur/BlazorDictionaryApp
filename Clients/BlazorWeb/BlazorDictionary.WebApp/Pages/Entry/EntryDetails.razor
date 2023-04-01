@@ -1,5 +1,4 @@
 ﻿@page "/entry/{id:guid}"
-
 @if (entry is not null)
 {
     <EntryViewerComponent Entry="@entry" />
@@ -16,10 +15,12 @@
 
     <br />
 
-    // TODO
-    // Pagination component will be here
+    <br />
 
-
+    <PaginationComponent TotalPage="@comments.PageInfo.TotolPageCount"
+                         CurrentPage="@currentPage"
+                         OnPageChanged="@OnPageChanged" />
+    <h1>asdasdp</h1>
     <AuthorizeView>
         <Authorized>
             <br />
@@ -33,6 +34,8 @@
 
         </Authorized>
     </AuthorizeView>
+    <br />
+    <br />
 }
 
 
@@ -68,7 +71,14 @@
 
     private async Task RefreshComments(int pageNumber)
     {
-        comments = await entryService.GetEntryComments(entry.Id, pageNumber, 10);
+        comments = await entryService.GetEntryComments(entry.Id, pageNumber, 5);
     }
+
+    public async Task OnPageChanged(int pageNumber)
+    {
+        currentPage = pageNumber;
+        comments = await entryService.GetEntryComments(entry.Id,currentPage, 5);
+    }
+
 
 }

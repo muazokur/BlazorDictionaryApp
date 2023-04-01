@@ -3,13 +3,14 @@
 
 @if (userDetail is not null)
 {
-    <h1 class="text-white">@userDetail</h1>
+    <h1 class="text-white">@userDetail.UserName</h1>
 }
+
 @if (isMyProfile)
 {
     <br />
     <input type="button" class="form-control btn-success btn-sozluk" value="Changes Details"
-           @onclick="(()=>showForm=!showForm)" />
+           @onclick="(()=> showForm = !showForm)" />
 }
 
 @if (showForm)
@@ -59,7 +60,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Email</div>
                     </div>
-                    <InputText @bind-Value="@userDetail.EmailAddress" class="form-control" placeHolder="Email" />
+                    <InputText @bind-Value="@userDetail.EmailAdress" class="form-control" placeHolder="Email" />
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@
 
         <br />
         <br />
-        <input type=" class="form-control btn-dark bg-gradient" value="Change Password"
+        <input type="button" class="form-control btn-dark bg-gradient" value="Change Password"
                @onclick="(()=>showChangePasswordSection=!showChangePasswordSection)" />
 
 
@@ -80,15 +81,16 @@
                 <span class="text-danger">@changePasswordErrorText</span>
                 <br />
             }
-
+            <br />
             <div class="form-row">
                 <div class="col-auto">
                     <InputText @bind-Value="@oldPassword" class="form-control" placeHolder="Old Passoword" />
+                    <br />
                     <InputText @bind-Value="@newPassword" class="form-control" placeHolder="New Passoword" />
 
                     <br />
 
-                    <input type=" class="form-control btn-success btn-sozluk" value="Save" @onclick="@ChangePassword" />
+                    <input type="button" class="form-control btn-success btn-sozluk" value="Save" @onclick="@ChangePassword" />
                 </div>
             </div>
         }
@@ -147,7 +149,7 @@
             userDetail = await userService.GetUserDetail(UserId);
         }
 
-        emailBeforeChange = userDetail.EmailAddress;
+        emailBeforeChange = userDetail.EmailAdress;
 
         var myUserName = await localStorageService.GetUserName();
         var myUserId = await localStorageService.GetUserId();
@@ -160,7 +162,7 @@
     {
         var success = await userService.UpdateUser(userDetail);
 
-        if (emailBeforeChange != userDetail.EmailAddress)
+        if (emailBeforeChange != userDetail.EmailAdress)
         {
             navigationManager.NavigateTo("/logout");
         }
