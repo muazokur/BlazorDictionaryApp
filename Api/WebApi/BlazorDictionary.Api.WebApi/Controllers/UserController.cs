@@ -58,7 +58,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [HttpPost]
         [Route("Update")]
         [Authorize]
-        public async Task<IActionResult> Update([FromBody] CreateUserCommand command)
+        public async Task<IActionResult> Update([FromBody] UpdateUserCommand command)
         {
             var guid = await mediator.Send(command);
 

@@ -9,7 +9,7 @@ namespace BlazorDictionary.Common.Infrastructure.Results
 {
     public class ValidationResponseModel
     {
-        public IEnumerable<string> Errors { get; set; }
+        public IEnumerable<string> errors { get; set; }
 
         public ValidationResponseModel()
         {
@@ -18,7 +18,7 @@ namespace BlazorDictionary.Common.Infrastructure.Results
 
         public ValidationResponseModel(IEnumerable<string> errors)
         {
-            Errors = errors;
+            this.errors = errors;
         }
 
         public ValidationResponseModel(string message) : this(new List<string>() { message})
@@ -27,6 +27,6 @@ namespace BlazorDictionary.Common.Infrastructure.Results
         }
 
         [JsonIgnore]
-        public string FlattenErrors => Errors != null ? string.Join(Environment.NewLine, Errors) : string.Empty;    
+        public string FlattenErrors => this.errors != null ? string.Join(Environment.NewLine, this.errors) : string.Empty;    
     }
 }
