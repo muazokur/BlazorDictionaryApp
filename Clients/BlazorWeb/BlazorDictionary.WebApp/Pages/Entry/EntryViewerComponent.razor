@@ -71,7 +71,7 @@
             return;
         }
 
-        if (args.IsDownVoteClicked)
+        if (args.IsUpVoteClicked)
         {
             await voteService.CreateEntryUpVote(args.EntryId);
             Entry.VoteType = VoteType.UpVote;

@@ -27,7 +27,7 @@
     ISyncLocalStorageService localStorage { get; set; }
 
     [Parameter]
-    public Common.ViewModels.VoteType VoteType { get; set; } = VoteType.None;
+    public Common.ViewModels.VoteType VoteType { get; set; }
 
     [Parameter]
     public EventCallback<FavClickedEventArgs> OnFavClicked { get; set; }

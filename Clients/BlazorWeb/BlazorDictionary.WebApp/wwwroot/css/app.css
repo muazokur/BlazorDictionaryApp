@@ -217,3 +217,10 @@ label{
 .blazor-error-boundary::after{
     content:"An error has occurred"
 }
+
+.entry-faved{
+    color:green
+}
+.entry-not-faved {
+    color: white    
+}
