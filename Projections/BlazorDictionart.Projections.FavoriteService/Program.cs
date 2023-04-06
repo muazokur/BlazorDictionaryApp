@@ -1,4 +1,4 @@
-using BlazorDictionart.Projections.FavoriteService;
+using BlazorDictionary.Projections.FavoriteService;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>

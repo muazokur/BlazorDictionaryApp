@@ -1,4 +1,5 @@
 ﻿using BlazorDictionary.Common.Events.Entry;
+using BlazorDictionary.Common.Events.EntryComment;
 using BlazorDictionary.Common.ViewModels;
 using Dapper;
 using Microsoft.Data.SqlClient;
@@ -31,21 +32,50 @@ namespace BlazorDictionary.Projections.VoteService.Services
                     Id = Guid.NewGuid(),
                     EntryId = vote.EntryId,
                     CreatedById = vote.CreatedBy,
-                    VoteType= (int)vote.VoteType,
-                    CreateDate=DateTime.Now
-                });;
+                    VoteType = (int)vote.VoteType,
+                    CreateDate = DateTime.Now
+                }); ;
         }
 
-        public async Task DeleteEntryVote(Guid entryId,Guid userId)
+        public async Task DeleteEntryVote(Guid entryId, Guid userId)
         {
             using var connection = new SqlConnection(connectionString);
 
             await connection.ExecuteAsync("DELETE FROM EntryVote WHERE EntryId=@EntryId AND CRATEDBYID=@UserId", new
+            {
+                Id = Guid.NewGuid(),
+                EntryId = entryId,
+                UserId = userId
+            });
+        }
+
+        public async Task CreateEntryCommentVote(CreateEntryCommentVoteEvent vote)
+        {
+            await DeleteEntryCommentVote(vote.EntryCommentId, vote.CreatedBy);
+
+            using var connection = new SqlConnection(connectionString);
+
+            await connection.ExecuteAsync("INSERT INTO ENTRYCOMMENTVOTE (Id,CreateDate,EntryId,VoteType,CratedById) " +
+                "VALUES (@Id,@CreateDate,@EntryId,@VoteType,@CreatedById)", new
                 {
                     Id = Guid.NewGuid(),
-                    EntryId = entryId,
-                    UserId = userId
-                });
+                    EntryId = vote.EntryCommentId,
+                    CreatedById = vote.CreatedBy,
+                    VoteType = (int)vote.VoteType,
+                    CreateDate = DateTime.Now
+                }); ;
+        }
+
+        public async Task DeleteEntryCommentVote(Guid entryId, Guid userId)
+        {
+            using var connection = new SqlConnection(connectionString);
+
+            await connection.ExecuteAsync("DELETE FROM ENTRYCOMMENTVOTE WHERE EntryId=@EntryId AND CRATEDBYID=@UserId", new
+            {
+                Id = Guid.NewGuid(),
+                EntryId = entryId,
+                UserId = userId
+            });
         }
     }
 }
