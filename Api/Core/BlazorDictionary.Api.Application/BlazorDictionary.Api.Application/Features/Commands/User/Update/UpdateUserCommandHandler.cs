@@ -48,7 +48,7 @@ namespace BlazorDictionary.Api.Application.Features.Commands.User.Update
             {
                 var @event = new UserEmailChangedEvent()
                 {
-                    OldEmailAdress = null,
+                    OldEmailAdress = dbEmailAddress,
                     NewEmailAdress = request.EmailAdress,
 
                 };
