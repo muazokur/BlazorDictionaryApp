@@ -3,6 +3,7 @@ using BlazorDictionary.Api.Application.Features.Queries.GetEntryComments;
 using BlazorDictionary.Api.Application.Features.Queries.GetEntryDetail;
 using BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries;
 using BlazorDictionary.Api.Application.Features.Queries.GetUserEntries;
+using BlazorDictionary.Common.Infrastructure.Exceptions;
 using BlazorDictionary.Common.Models.Queries;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
@@ -26,9 +27,19 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var result = await mediator.Send(new GetEntryDetailQuery(id, UserId));
+            try
+            {
+                var result = await mediator.Send(new GetEntryDetailQuery(id, UserId));
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                var result = await mediator.Send(new GetEntryDetailQuery(id, Guid.NewGuid()));
+
+                return Ok(result);
+            }
+           
         }
 
 
@@ -36,15 +47,25 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [Route("Comments/id")]
         public async Task<IActionResult> GetEntryComments(Guid id, int page, int pageSize)
         {
-            var result = await mediator.Send(new GetEntryCommentsQuery(page, pageSize, id, UserId));
+            try
+            {
+                var result = await mediator.Send(new GetEntryCommentsQuery(page, pageSize, id, UserId));
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+
+                var result = await mediator.Send(new GetEntryCommentsQuery(page, pageSize, id, Guid.NewGuid()));
+
+                return Ok(result);
+            }
+           ;
         }
 
         [HttpGet]
         [Route("UserEntries")]
         [Authorize]
-
         public async Task<IActionResult> GetUserEntries(string userName, Guid userId, int page, int pageSize)
         {
             if (userId == Guid.Empty && string.IsNullOrEmpty(userName))
@@ -59,9 +80,18 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [Route("MainPageEntries")]
         public async Task<IActionResult> GetMainPageEntries(int page, int pageSize)
         {
-            var entries = await mediator.Send(new GetMainPageEntriesQuery(UserId, page, pageSize));
+            try
+            {
+                var entries = await mediator.Send(new GetMainPageEntriesQuery(UserId.Value, page, pageSize));
 
-            return Ok(entries);
+                return Ok(entries);
+            }
+            catch (Exception)
+            {
+                var entries = await mediator.Send(new GetMainPageEntriesQuery(Guid.NewGuid(), page, pageSize));
+
+                return Ok(entries);
+            }
         }
 
 
@@ -77,7 +107,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [Route("Search")]
         public async Task<IActionResult> Search([FromQuery] SearchEntryQuery query)
         {
-            var result= await mediator.Send(query);
+            var result = await mediator.Send(query);
 
             return Ok(result);
         }
@@ -86,7 +116,6 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [HttpPost]
         [Route("CreateEntry")]
         [Authorize]
-
         public async Task<IActionResult> CreateEntry([FromBody] CreateEntryCommand command)
         {
             if (!command.CreatedById.HasValue)
@@ -100,7 +129,6 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [HttpPost]
         [Route("CreateEntryComment")]
         [Authorize]
-
         public async Task<IActionResult> CreateEntryComment([FromBody] CreateEntryCommentCommand command)
         {
             if (!command.CreatedById.HasValue)

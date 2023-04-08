@@ -19,7 +19,7 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries
         public async Task<PagedViewModel<GetEntryDetailViewModel>> Handle(GetMainPageEntriesQuery request, CancellationToken cancellationToken)
         {
             var query = entryRepository.AsQuaryable();
-
+            
             query = query.Include(i => i.EntryFavorites)
                        .Include(i => i.CreatedBy)
                        .Include(i => i.EntryVotes);
