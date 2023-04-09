@@ -37,11 +37,11 @@ namespace BlazorDictionary.Projections.FavoriteService.Services
         {
             using var connection = new SqlConnection(connectionString);
 
-            await connection.ExecuteAsync("INSERT INTO EntryCommentFavorite (Id,EntryId,CreatedById,CreateDate) " +
-                "VALUES (@Id,@EntryId,@CreatedById, GETDATE())", new
+            await connection.ExecuteAsync("INSERT INTO EntryCommentFavorite (Id,EntryCommentId,CreatedById,CreateDate) " +
+                "VALUES (@Id,@EntryCommentId,@CreatedById, GETDATE())", new
                 {
                     Id = Guid.NewGuid(),
-                    EntryId = @event.EntryCommentId,
+                    EntryCommentId = @event.EntryCommentId,
                     CreatedById = @event.CreatedBy,
                 });
         }
@@ -64,7 +64,7 @@ namespace BlazorDictionary.Projections.FavoriteService.Services
             await connection.ExecuteAsync("DELETE FROM EntryCommentFavorite WHERE EntryCommentId=@EntryCommentId and CreatedById=@CreatedById", new
             {
                 Id = Guid.NewGuid(),
-                EntryId = @event.EntryCommentId,
+                EntryCommentId = @event.EntryCommentId,
                 CreatedById = @event.CreatedBy,
             });
         }

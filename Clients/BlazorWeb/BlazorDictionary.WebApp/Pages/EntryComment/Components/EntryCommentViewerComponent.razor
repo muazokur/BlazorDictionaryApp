@@ -9,6 +9,7 @@
                                               OnFavClicked="@OnFavClicked"
                                               OnVoteClicked="@OnVoteClicked"
                                               FavoritedCount="@EntryComment.FavoriteCount"
+                                              VoteType=@EntryComment.VoteType
                                               IsFavorited="@EntryComment.IsFavorited" />
 
             <EntryFooterAuthorComponent UserName="@EntryComment.CreatedByUserName"
@@ -34,13 +35,13 @@
     {
         if (args.IsFaved)
         {
-            await favService.CreateEntryFav(args.EntryId);
+            await favService.CreateEntryCommentFav(args.EntryId);
             EntryComment.IsFavorited = true;
             EntryComment.FavoriteCount++;
         }
         else
         {
-            await favService.DeleteEntryFav(args.EntryId);
+            await favService.DeleteEntryCommentFav(args.EntryId);
             EntryComment.IsFavorited = false;
             EntryComment.FavoriteCount--;
         }
@@ -51,20 +52,20 @@
     {
         if (args.UpVoteDeleted || args.DownVoteDeleted)
         {
-            await voteService.DeleteEntryVote(args.EntryId);
+            await voteService.DeleteEntryCommentVote(args.EntryId);
             EntryComment.VoteType = VoteType.None;
             return;
         }
 
-        if (args.IsDownVoteClicked)
+        if (args.IsUpVoteClicked)
         {
-            await voteService.CreateEntryUpVote(args.EntryId);
+            await voteService.CreateEntryCommentUpVote(args.EntryId);
             EntryComment.VoteType = VoteType.UpVote;
             return;
         }
         if (args.IsDownVoteClicked)
         {
-            await voteService.CreateEntryDownVote(args.EntryId);
+            await voteService.CreateEntryCommentDownVote(args.EntryId);
             EntryComment.VoteType = VoteType.DownVote;
             return;
         }

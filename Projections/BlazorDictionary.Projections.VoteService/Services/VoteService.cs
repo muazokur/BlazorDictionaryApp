@@ -55,12 +55,12 @@ namespace BlazorDictionary.Projections.VoteService.Services
 
             using var connection = new SqlConnection(connectionString);
 
-            await connection.ExecuteAsync("INSERT INTO ENTRYCOMMENTVOTE (Id,CreateDate,EntryId,VoteType,CratedById) " +
-                "VALUES (@Id,@CreateDate,@EntryId,@VoteType,@CreatedById)", new
+            await connection.ExecuteAsync("INSERT INTO ENTRYCOMMENTVOTE (Id,CreateDate,EntryCommentId,VoteType,CratedById) " +
+                "VALUES (@Id,@CreateDate,@EntryCommentId,@VoteType,@CratedById)", new
                 {
                     Id = Guid.NewGuid(),
-                    EntryId = vote.EntryCommentId,
-                    CreatedById = vote.CreatedBy,
+                    EntryCommentId = vote.EntryCommentId,
+                    CratedById = vote.CreatedBy,
                     VoteType = (int)vote.VoteType,
                     CreateDate = DateTime.Now
                 }); ;
@@ -70,10 +70,10 @@ namespace BlazorDictionary.Projections.VoteService.Services
         {
             using var connection = new SqlConnection(connectionString);
 
-            await connection.ExecuteAsync("DELETE FROM ENTRYCOMMENTVOTE WHERE EntryId=@EntryId AND CRATEDBYID=@UserId", new
+            await connection.ExecuteAsync("DELETE FROM ENTRYCOMMENTVOTE WHERE EntryCommentId=@EntryCommentId AND CRATEDBYID=@UserId", new
             {
                 Id = Guid.NewGuid(),
-                EntryId = entryId,
+                EntryCommentId = entryId,
                 UserId = userId
             });
         }
