@@ -1,11 +1,15 @@
 ﻿using BlazorDictionary.Api.Application.Features.Commands.User.ConfirmEmail;
 using BlazorDictionary.Api.Application.Features.Queries.GetUserDetail;
+using BlazorDictionary.Api.WebApi.Extensions;
 using BlazorDictionary.Common.Event.User;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BlazorDictionary.Api.WebApi.Controllers
 {
@@ -31,9 +35,19 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         [HttpGet("UserName/{userName}")]
         public async Task<IActionResult> GetByUserName(string userName)
         {
-            var user = await mediator.Send(new GetUserDetailQuery(Guid.Empty,userName));
+            var user = await mediator.Send(new GetUserDetailQuery(Guid.Empty, userName));
 
             return Ok(user);
+        }
+
+        private async void SignIn(string userId)
+        {
+            var claims = new List<Claim> { new Claim(ClaimTypes.NameIdentifier, userId) };
+
+            var claimsIdentity=new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties();
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity),authProperties);
         }
 
         [HttpPost]
@@ -41,7 +55,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
             var res = await mediator.Send(command);
-
+            //SignIn(res.Id.ToString());
             return Ok(res);
         }
 
@@ -50,7 +64,6 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
-            
             return Ok(guid);
         }
 

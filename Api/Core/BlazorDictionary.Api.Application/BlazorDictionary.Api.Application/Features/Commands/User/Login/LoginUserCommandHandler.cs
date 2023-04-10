@@ -5,6 +5,7 @@ using BlazorDictionary.Common.Infrastructure.Exceptions;
 using BlazorDictionary.Common.Models.Queries;
 using BlazorDictionary.Common.Models.RequestModels;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -73,7 +74,6 @@ namespace BlazorDictionary.Api.Application.Features.Commands.User.Login
             return new JwtSecurityTokenHandler().WriteToken(token);
 
         }
-
 
     }
 }

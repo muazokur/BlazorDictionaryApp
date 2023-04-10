@@ -3,6 +3,7 @@ using BlazorDictionary.Api.Application.Features.Queries.GetEntryComments;
 using BlazorDictionary.Api.Application.Features.Queries.GetEntryDetail;
 using BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries;
 using BlazorDictionary.Api.Application.Features.Queries.GetUserEntries;
+using BlazorDictionary.Api.WebApi.Extensions;
 using BlazorDictionary.Common.Infrastructure.Exceptions;
 using BlazorDictionary.Common.Models.Queries;
 using BlazorDictionary.Common.Models.RequestModels;
@@ -39,7 +40,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
                 return Ok(result);
             }
-           
+
         }
 
 
@@ -83,11 +84,12 @@ namespace BlazorDictionary.Api.WebApi.Controllers
             try
             {
                 var entries = await mediator.Send(new GetMainPageEntriesQuery(UserId.Value, page, pageSize));
-
+                //var entries = await mediator.Send(new GetMainPageEntriesQuery(User.GetUserId(), page, pageSize));
                 return Ok(entries);
             }
             catch (Exception)
             {
+
                 var entries = await mediator.Send(new GetMainPageEntriesQuery(Guid.NewGuid(), page, pageSize));
 
                 return Ok(entries);
