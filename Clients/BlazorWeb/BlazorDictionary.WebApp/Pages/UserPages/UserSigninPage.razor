@@ -4,7 +4,7 @@
 <div class="login-container">
     <div class="row justify-content-center align-items-start h-100">
         <div class="login-form">
-            <EditForm Model="@createUserCommand" OnValidSubmit="@LoginProcess">
+            <EditForm Model="@createUserCommand" OnValidSubmit="@SignInProcess">
 
                 @if (errorText != string.Empty)
                 {
@@ -58,7 +58,7 @@
     private string errorText = "";
 
 
-    public async Task LoginProcess()
+    public async Task SignInProcess()
     {
         try
         {

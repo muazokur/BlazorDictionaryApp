@@ -217,14 +217,14 @@
       "netstandard.dll": "sha256-kBK\/QJy7\/skP97jqnvXnOFMrhWS8HZ1bsADFK\/gZkyM=",
       "System.Private.CoreLib.dll": "sha256-3webPuyNUXfAFKY5c1tC\/jBVrjZHelBwvXrr1E9VJuk=",
       "BlazorDictionary.Common.dll": "sha256-oVhYMUC2lqTV9\/eYfFAZL2hFQ019LbZte578CPJGc8A=",
-      "BlazorDictionary.WebApp.dll": "sha256-KX7oqBtsV7YwyKJOZ0sUqhKqfQZONy9fyRz9tmiuTEg="
+      "BlazorDictionary.WebApp.dll": "sha256-0h1AwZHzDvfnEw6BtAtmEAQ25lH9hW8geilq+azLoxk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "BlazorDictionary.Common.pdb": "sha256-2MpaAJhsgxIfutrk4AsjeYyCj0yANlXI59e7\/nQcXU8=",
-      "BlazorDictionary.WebApp.pdb": "sha256-HynR1sgH2dVj76Sp8HuTJ\/h1BwnK131rsUc6QNOdI54="
+      "BlazorDictionary.WebApp.pdb": "sha256-ITTy8jFfCtnEcyXWd2NvfRhWv55vyRC8kxRVIHbyIPA="
     },
     "runtime": {
       "dotnet.6.0.13.rt672llkpw.js": "sha256-X\/515F1HEzgsDZdY8BJjt8YUwrWngHGZkMnpClhsrpY=",
