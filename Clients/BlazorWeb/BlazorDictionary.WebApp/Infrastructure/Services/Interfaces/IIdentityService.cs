@@ -10,6 +10,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services.Interfaces
         string GetUserName();
         string GetUserToken();
         Task<bool> Login(LoginUserCommand command);
+        Task<bool> Create(CreateUserCommand command);
         void Logout();
     }
 }

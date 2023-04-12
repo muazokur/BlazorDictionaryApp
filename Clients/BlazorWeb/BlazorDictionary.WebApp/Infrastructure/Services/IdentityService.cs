@@ -42,6 +42,30 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
             return syncLocalStorageService.GetUserId();
         }
 
+        public async Task<bool> Create(CreateUserCommand command)
+        {
+            string responseStr;
+            var httpResponse = await client.PostAsJsonAsync("/api/User/Create", command);
+            if (httpResponse != null && !httpResponse.IsSuccessStatusCode)
+            {
+                if (httpResponse.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    responseStr = await httpResponse.Content.ReadAsStringAsync();
+                    var validation = JsonSerializer.Deserialize<ValidationResponseModel>(responseStr);
+                    responseStr = validation.FlattenErrors;
+                    // TODO 
+                    // validation is null!
+                    throw new DatabaseValidationException(responseStr);
+                }
+                return false;
+            }
+
+            return true;
+            
+
+
+        }
+
         public async Task<bool> Login(LoginUserCommand command)
         {
             string responseStr;

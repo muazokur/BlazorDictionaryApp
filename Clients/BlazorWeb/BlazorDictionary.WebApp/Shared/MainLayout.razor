@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 
-<div class="navbar fixed-top text-white">
+<div class="navbar fixed-top text-white" style="background-color:#2d2d2d; width:82%">
     <div class="logo">
         <a href="/" class="bg-white">
             <img height="29" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg/2560px-Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg.png" />
@@ -30,21 +30,21 @@
 
         @if (showSearchResult)
         {
-                <ul class="list-group">
+            <ul class="list-group">
 
-                    @foreach (var searchItem in searchResult)
-                    {
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center border-0">
+                @foreach (var searchItem in searchResult)
+                {
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center border-0">
 
-                            <a @onclick="(async () => await GoEntry(searchItem.Id))">
-                                @searchItem.Subject
-                            </a>
+                        <a @onclick="(async () => await GoEntry(searchItem.Id))">
+                            @searchItem.Subject
+                        </a>
 
-                        </li>
-                    }
+                    </li>
+                }
 
 
-                </ul>
+            </ul>
 
         }
 
@@ -63,13 +63,14 @@
 
             <div class="top-nav">
                 <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @onclick="@NavigateLoginPage" />
+                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Sing in" @onclick="@NavigateSigninPage" />
+
             </div>
 
         </NotAuthorized>
 
 
     </AuthorizeView>
-
 
     <div class="sub-nav">
         <a class="sub-nav-item active">bugün</a>
@@ -137,6 +138,10 @@
     private void NavigateLoginPage()
     {
         navigationManager.NavigateTo("/login");
+    }
+    private void NavigateSigninPage()
+    {
+        navigationManager.NavigateTo("/signin");
     }
     private void NavigateLogoutPage()
     {

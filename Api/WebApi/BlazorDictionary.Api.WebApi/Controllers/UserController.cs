@@ -60,7 +60,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Route("Create")]
         public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
