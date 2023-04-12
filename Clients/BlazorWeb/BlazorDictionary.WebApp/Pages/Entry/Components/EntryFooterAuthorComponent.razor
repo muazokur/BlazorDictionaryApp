@@ -1,6 +1,15 @@
 ﻿<div class="card text-end border-0">
     <div class="entry-author">
-        <a href="/profile/@UserName">@UserName</a>
+        @if (isLoggedIn)
+        {
+            <a href="/profile/@UserName">@UserName</a>
+
+        }
+        else
+        {
+            <a href="#">@UserName</a>
+
+        }
     </div>
 
     <div class="entry-date">
@@ -15,4 +24,8 @@
 
     [Parameter]
     public DateTime CreateDate { get; set; }
+
+    [Parameter]
+    public bool isLoggedIn { get; set; }
+
 }

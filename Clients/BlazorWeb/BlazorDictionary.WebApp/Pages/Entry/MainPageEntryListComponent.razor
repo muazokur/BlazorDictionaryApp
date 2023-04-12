@@ -4,12 +4,13 @@
 {
     foreach (var entry in entries.Results)
     {
+
         <EntryViewerComponent Entry=@entry />
         <br />
     }
     <br />
     <br />
-    
+
     <PaginationComponent TotalPage="@entries.PageInfo.TotolPageCount"
                          CurrentPage="@currentPage"
                          OnPageChanged="@OnPageChanged" />

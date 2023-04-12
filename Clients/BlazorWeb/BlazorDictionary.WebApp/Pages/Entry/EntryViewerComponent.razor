@@ -1,34 +1,36 @@
-﻿@if (Entry != null)
+﻿@inject IJSRuntime JsRuntime
+
+@if (Entry != null)
 {
     <div class="card border-0">
         <div class="card-body">
             <h5 class="card-title"><a href="/entry/@Entry.Id"><strong class="entry-subject">@Entry.Subject</strong></a></h5>
             <br />
             <p class="entry-content">@Entry.Content</p>
-    
-            <AuthorizeView>
 
-                @if (MyEntries)
-                {
-                    <EntryFooterFavoriteComponent EntryId="@Entry.Id"
+
+            @if (MyEntries)
+            {
+                <EntryFooterFavoriteComponent EntryId="@Entry.Id"
+                                              OnFavClicked="@OnFavClicked"
+                                              FavoritedCount="@Entry.FavoriteCount"
+                                              IsFavorited="@Entry.IsFavorited" />
+            }
+            else
+            {
+
+                <EntryFooterRateFavoriteComponent EntryId="@Entry.Id"
                                                   OnFavClicked="@OnFavClicked"
+                                                  OnVoteClicked="@OnVoteClicked"
                                                   FavoritedCount="@Entry.FavoriteCount"
+                                                  VoteType=@Entry.VoteType
                                                   IsFavorited="@Entry.IsFavorited" />
-                }
-                else
-                {
-
-                    <EntryFooterRateFavoriteComponent EntryId="@Entry.Id"
-                                                      OnFavClicked="@OnFavClicked"
-                                                      OnVoteClicked="@OnVoteClicked"
-                                                      FavoritedCount="@Entry.FavoriteCount"
-                                                      VoteType=@Entry.VoteType
-                                                      IsFavorited="@Entry.IsFavorited" />
-                }
-            </AuthorizeView>
+            }
 
             <EntryFooterAuthorComponent UserName="@Entry.CreatedByUserName"
-                                        CreateDate="@Entry.CreatedDate" />
+                                        CreateDate="@Entry.CreatedDate"
+                                        isLoggedIn="@IdentityService.IsLoggedIn"
+                                        />
 
         </div>
     </div>
@@ -48,43 +50,63 @@
     [Inject]
     IFavService favService { get; set; }
 
+    [Inject]
+    IIdentityService IdentityService { get; set; }
+
     private async Task OnFavClicked(BlazorDictionary.WebApp.Infrastructure.Models.FavClickedEventArgs args)
     {
-        if (args.IsFaved)
+        if (IdentityService.IsLoggedIn)
         {
-            await favService.CreateEntryFav(args.EntryId);
-            Entry.IsFavorited = true;
-            Entry.FavoriteCount++;
+            if (args.IsFaved)
+            {
+                await favService.CreateEntryFav(args.EntryId);
+                Entry.IsFavorited = true;
+                Entry.FavoriteCount++;
+            }
+            else
+            {
+                await favService.DeleteEntryFav(args.EntryId);
+                Entry.IsFavorited = false;
+                Entry.FavoriteCount--;
+            }
+            StateHasChanged();
         }
         else
         {
-            await favService.DeleteEntryFav(args.EntryId);
-            Entry.IsFavorited = false;
-            Entry.FavoriteCount--;
+            await JsRuntime.InvokeVoidAsync("alert", "Önce giriş yapmalısın!");
         }
-        StateHasChanged();
     }
+
 
     private async Task OnVoteClicked(VoteClickedEventArgs args)
     {
-        if (args.UpVoteDeleted || args.DownVoteDeleted)
+        if (IdentityService.IsLoggedIn)
         {
-            await voteService.DeleteEntryVote(args.EntryId);
-            Entry.VoteType = VoteType.None;
-            return;
-        }
+            if (args.UpVoteDeleted || args.DownVoteDeleted)
+            {
+                await voteService.DeleteEntryVote(args.EntryId);
+                Entry.VoteType = VoteType.None;
+                return;
+            }
 
-        if (args.IsUpVoteClicked)
-        {
-            await voteService.CreateEntryUpVote(args.EntryId);
-            Entry.VoteType = VoteType.UpVote;
-            return;
+            if (args.IsUpVoteClicked)
+            {
+                await voteService.CreateEntryUpVote(args.EntryId);
+                Entry.VoteType = VoteType.UpVote;
+                return;
+            }
+            if (args.IsDownVoteClicked)
+            {
+                await voteService.CreateEntryDownVote(args.EntryId);
+                Entry.VoteType = VoteType.DownVote;
+                return;
+            }
         }
-        if (args.IsDownVoteClicked)
+        else
         {
-            await voteService.CreateEntryDownVote(args.EntryId);
-            Entry.VoteType = VoteType.DownVote;
-            return;
+            await JsRuntime.InvokeVoidAsync("alert", "Önce giriş yapmalısın!");
         }
     }
+
+
 }
