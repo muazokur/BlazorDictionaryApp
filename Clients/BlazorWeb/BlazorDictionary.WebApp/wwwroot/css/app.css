@@ -34,14 +34,14 @@ label{
 
 .btn-success.btn-sozluk{
     color:white;
-    background-color:#68a138;
+    background-color:#2AB3FC;
     border-color:#3e6121;
     font-size:13px; 
 }
 
-.btn-success.btn-sozluk:hover{
-    background-color:#5c8e31;
-}
+    .btn-success.btn-sozluk:hover {
+        background-color: #2AA5FC;
+    }
 
 .btn-success.btn-sozluk:focus, :active{
     box-shadow:none;
@@ -102,16 +102,16 @@ label{
     font-size:16px;
 }
 
-.entry-author{
-    color:#53a245;
+.entry-author {
+    color: #2AB3FC;
     font-size: 13px;
-    background-color:#2d2d2d;
-}
-
-.entry-author a {
-    color: #53a245;
     background-color: #2d2d2d;
 }
+
+    .entry-author a {
+        color: #2AB3FC;
+        background-color: #2d2d2d;
+    }
 
 .entry-author a:hover {
     text-decoration:underline

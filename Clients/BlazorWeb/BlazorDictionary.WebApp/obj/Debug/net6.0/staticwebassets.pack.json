@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\BlazorDictionary.WebApp.styles.css"
     },
     {
+      "Id": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\blazor_dictionary_logo.png",
+      "PackagePath": "staticwebassets\\blazor_dictionary_logo.png"
+    },
+    {
       "Id": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

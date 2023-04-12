@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gA1AI1tqTq/TSHaCZrSfOB1jlO0ejSM0hSzzoQ+PWkw=",
+  "Hash": "55aeED4e7dAAS7NqEnaBwl5olNrJACfez1QunhFBmoI=",
   "Source": "BlazorDictionary.WebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7580,6 +7580,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorDictionary.WebApp.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\blazor_dictionary_logo.png",
+      "SourceId": "BlazorDictionary.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "blazor_dictionary_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\blazor_dictionary_logo.png"
     },
     {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\css\\app.css",

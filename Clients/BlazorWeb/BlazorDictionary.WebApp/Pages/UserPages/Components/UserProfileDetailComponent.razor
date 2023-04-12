@@ -21,7 +21,7 @@
     <EditForm Model="@userDetail" OnValidSubmit="@OnSaveClicked">
 
         <div class="form-row">
-            <div class="col-auto">
+            <div class="col-4">
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">User Name</div>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-row">
-            <div class="col-auto">
+            <div class="col-4">
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">First Name</div>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-row">
-            <div class="col-auto">
+            <div class="col-4">
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">Last Name</div>
@@ -55,7 +55,7 @@
 
 
         <div class="form-row">
-            <div class="col-auto">
+            <div class="col-4">
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">Email</div>
@@ -83,14 +83,14 @@
             }
             <br />
             <div class="form-row">
-                <div class="col-auto">
+                <div class="col-4">
                     <InputText @bind-Value="@oldPassword" class="form-control" placeHolder="Old Passoword" />
                     <br />
                     <InputText @bind-Value="@newPassword" class="form-control" placeHolder="New Passoword" />
 
                     <br />
 
-                    <input type="button" class="form-control btn-success btn-sozluk" value="Save" @onclick="@ChangePassword" />
+                    <input type="button" class="form-control btn-success w-auto" value="Save" @onclick="@ChangePassword" />
                 </div>
             </div>
         }

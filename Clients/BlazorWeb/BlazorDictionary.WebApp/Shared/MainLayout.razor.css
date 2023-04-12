@@ -76,8 +76,8 @@ a.sub-nav-item {
 
     a.sub-nav-item:hover, a.sub-nav-item.active {
         cursor: pointer;
-        color: #80be4a;
-        border-color: #80be4a;
+        color: #2AB3FC;
+        border-color: #2AB3FC;
         border-bottom: solid;
         transition: all .2s ease-in-out;
     }
