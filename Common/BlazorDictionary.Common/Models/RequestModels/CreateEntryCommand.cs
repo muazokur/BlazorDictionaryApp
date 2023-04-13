@@ -12,12 +12,14 @@ namespace BlazorDictionary.Common.Models.RequestModels
         public string Subject { get; set; }
         public string Content { get; set; }
         public Guid? CreatedById { get; set; }
+        public string? Category { get; set; }
 
-        public CreateEntryCommand(string subject, string content, Guid? createdById)
+        public CreateEntryCommand(string subject, string content, Guid? createdById,string? category)
         {
             Subject = subject;
             Content = content;
             CreatedById = createdById;
+            Category = category;
         }
 
         public CreateEntryCommand()

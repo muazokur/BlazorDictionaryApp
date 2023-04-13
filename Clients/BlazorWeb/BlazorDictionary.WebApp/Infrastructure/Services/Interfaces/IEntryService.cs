@@ -8,7 +8,7 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services.Interfaces
     {
         Task<Guid> CreateEntry(CreateEntryCommand command);
         Task<Guid> CreateEntryComment(CreateEntryCommentCommand command);
-        Task<List<GetEntriesViewModel>> GetEntries();
+        Task<List<GetEntriesViewModel>> GetEntries(string category=null);
         Task<PagedViewModel<GetEntryCommentsViewModel>> GetEntryComments(Guid entryId, int page, int pageSize);
         Task<GetEntryDetailViewModel> GetEntryDetail(Guid entryId);
         Task<PagedViewModel<GetEntryDetailViewModel>> GetMainPageEntries(int page, int pageSize);

@@ -16,9 +16,11 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
             this.client = client;
         }
 
-        public async Task<List<GetEntriesViewModel>> GetEntries()
+        public async Task<List<GetEntriesViewModel>> GetEntries(string category=null)
         {
-            var result = await client.GetFromJsonAsync<List<GetEntriesViewModel>>("/api/Entry?TodaysEntries=false&count=30");
+            
+            var result = await client.GetFromJsonAsync<List<GetEntriesViewModel>>
+                ($"/api/Entry?TodaysEntries=false&count=30&Category={category}");
 
             return result;
         }

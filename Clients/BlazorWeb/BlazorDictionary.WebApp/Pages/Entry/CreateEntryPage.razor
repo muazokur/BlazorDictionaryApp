@@ -6,10 +6,11 @@
 <EditForm Model="@command" OnValidSubmit="@CreateEntry">
     <div class="entry-comment-add-container p-5">
         <div class="entry-comment-add">
-            <InputText @bind-Value="command.Subject" class="form-control" placeHolder="subject"/>
+            <InputText @bind-Value="command.Subject" class="form-control" placeHolder="subject" />
             <br />
-
-            <InputTextArea @bind-Value="command.Content" class="entry-comment-textarea" placeHolder="tell us something"/>
+            <InputText @bind-Value="command.Category" class="form-control" placeHolder="category" />
+            <br />
+            <InputTextArea @bind-Value="command.Content" class="entry-comment-textarea" placeHolder="tell us something" />
 
             <div class="entry-comment-actions">
                 <input type="submit" class="btn btn-success btn-sozluk" value="Crate" />

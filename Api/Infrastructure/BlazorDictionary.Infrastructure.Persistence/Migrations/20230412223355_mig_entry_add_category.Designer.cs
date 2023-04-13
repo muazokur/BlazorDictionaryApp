@@ -4,6 +4,7 @@ using BlazorDictionary.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorDictionary.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(BlazorDictionaryContext))]
-    partial class BlazorDictionaryContextModelSnapshot : ModelSnapshot
+    [Migration("20230412223355_mig_entry_add_category")]
+    partial class mig_entry_add_category
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

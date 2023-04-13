@@ -117,7 +117,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("CreateEntry")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> CreateEntry([FromBody] CreateEntryCommand command)
         {
             if (!command.CreatedById.HasValue)

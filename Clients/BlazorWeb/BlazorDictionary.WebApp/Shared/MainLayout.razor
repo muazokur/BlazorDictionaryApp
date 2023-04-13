@@ -74,14 +74,15 @@
     </AuthorizeView>
 
     <div class="sub-nav">
-        <a class="sub-nav-item active">bugün</a>
-        <a class="sub-nav-item">gündem</a>
-        <a class="sub-nav-item">debe</a>
-        <a class="sub-nav-item">sorunsallar</a>
-        <a class="sub-nav-item">takip</a>
-        <a class="sub-nav-item">son</a>
-        <a class="sub-nav-item">kenar</a>
-        <a class="sub-nav-item">çaylaklar</a>
+        <a @onclick="@(e=>RefreshEntries(""))" class="sub-nav-item active">bugün</a>
+        <a @onclick="@(e=>RefreshEntries("gündem"))" class="sub-nav-item">gündem</a>
+        <a @onclick="@(e=>RefreshEntries("bilgisayar"))" class="sub-nav-item">bilgisayar</a>
+        <a @onclick="@(e=>RefreshEntries("elektrik"))" class="sub-nav-item">elektrik</a>
+        <a @onclick="@(e=>RefreshEntries("makine"))" class="sub-nav-item">makine</a>
+        <a @onclick="@(e=>RefreshEntries("inşaat"))" class="sub-nav-item">inşaat</a>
+        <a @onclick="@(e=>RefreshEntries("mekatronik"))" class="sub-nav-item">mekatronik</a>
+        <a @onclick="@(e=>RefreshEntries("gıda"))" class="sub-nav-item">gıda</a>
+
     </div>
 
 
@@ -89,16 +90,15 @@
 
 
 
-
-
 <div class="page">
     <div class="sidebar">
-        <h5 class="text-white text-center siderbar-heading">@EntriesSubject</h5>
-
-        <a class="more-data" @onclick="@RefreshEntries">refresh</a>
+        <h5 class="text-white text-center siderbar-heading">@Category</h5>
+        @*<a class="more-data" @onclick="@RefreshEntries">refresh</a>*@
 
         <ul class="list-group">
-            <EntriesComponent @ref="@entriesComponent" />
+            <EntriesComponent @ref="@entriesComponent" 
+                              Category="@Category"
+                              />
         </ul>
 
     </div>
@@ -113,8 +113,7 @@
 
 
 @code{
-
-    public string EntriesSubject { get; set; } = "bugün";
+    public string Category { get; set; } = "gündem";
     private EntriesComponent entriesComponent;
     private string searchText;
     private bool showSearchResult;
@@ -127,9 +126,10 @@
 
 
 
-    private async Task RefreshEntries()
+    private async Task RefreshEntries(string category)
     {
-        await entriesComponent.RefreshList();
+        Category = category;
+        await entriesComponent.RefreshList(category);
     }
 
     private void NavigateMePage()

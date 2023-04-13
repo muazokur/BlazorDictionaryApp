@@ -17,14 +17,17 @@
 
     List<GetEntriesViewModel> entries = new();
 
+    [Parameter]
+    public string Category { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
-        await RefreshList();
+        await RefreshList(Category);
     }
 
-    public async Task RefreshList()
+    public async Task RefreshList(string category)
     {
-        entries = await entryService.GetEntries();
+        entries = await entryService.GetEntries(category);
 
         StateHasChanged();
     }

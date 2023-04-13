@@ -12,6 +12,7 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetEntries
     {
         public bool TodaysEntries { get; set; }
         public int Count { get; set; } = 100;
+        public string? Category { get; set; }
 
     }
 }

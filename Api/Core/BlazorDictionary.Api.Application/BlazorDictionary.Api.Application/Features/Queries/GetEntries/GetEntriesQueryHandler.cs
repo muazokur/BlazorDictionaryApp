@@ -31,8 +31,10 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetEntries
             {
                 query = query.Where(i => i.CreateDate >= DateTime.Now.Date).Where(i => i.CreateDate <= DateTime.Now.AddDays(1).Date);
             }
-
-            query = query.Include(i => i.EntryComments).OrderBy(i => Guid.NewGuid()).Take(request.Count);
+            //TODO
+            //Category linq process
+            //query = query.Where(x=>x.Category==request.Category).OrderBy(y=>y.CreateDate).Include(i => i.EntryComments).OrderBy(i => Guid.NewGuid()).Take(request.Count);
+            query = query.Where(x => x.Category == request.Category).OrderByDescending(y => y.CreateDate).Include(i => i.EntryComments);
 
             return await query.ProjectTo<GetEntriesViewModel>(mapper.ConfigurationProvider).ToListAsync(cancellationToken);
         }

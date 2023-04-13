@@ -24,7 +24,7 @@ namespace BlazorDictionary.Api.Application.Features.Commands.Entry.Create
         public async Task<Guid> Handle(CreateEntryCommand request, CancellationToken cancellationToken)
         {
             var dbEntry = mapper.Map<Domain.Models.Entry>(request);
-
+            
             await entryRepository.AddAsync(dbEntry);
 
             return dbEntry.Id;
