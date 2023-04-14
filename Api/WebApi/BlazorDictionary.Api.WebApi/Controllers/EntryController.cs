@@ -101,7 +101,7 @@ namespace BlazorDictionary.Api.WebApi.Controllers
         public async Task<IActionResult> GetEntries([FromQuery] GetEntriesQuery query)
         {
             var entries = await mediator.Send(query);
-
+            
             return Ok(entries);
         }
 

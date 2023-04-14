@@ -1,6 +1,7 @@
 ﻿using BlazorDictionary.Common.Models.Pages;
 using BlazorDictionary.Common.Models.Queries;
 using BlazorDictionary.Common.Models.RequestModels;
+using BlazorDictionary.WebApp.Infrastructure.Constants;
 using BlazorDictionary.WebApp.Infrastructure.Services.Interfaces;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -18,9 +19,12 @@ namespace BlazorDictionary.WebApp.Infrastructure.Services
 
         public async Task<List<GetEntriesViewModel>> GetEntries(string category=null)
         {
+            bool todaysEntries = false;
+            if(category==CategoryConstants.today)
+                todaysEntries = true;
             
             var result = await client.GetFromJsonAsync<List<GetEntriesViewModel>>
-                ($"/api/Entry?TodaysEntries=false&count=30&Category={category}");
+                ($"/api/Entry?TodaysEntries={todaysEntries}&count=30&Category={category}");
 
             return result;
         }
