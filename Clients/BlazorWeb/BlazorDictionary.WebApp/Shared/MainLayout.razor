@@ -1,10 +1,10 @@
 ﻿@inherits LayoutComponentBase
-
+@using BlazorDictionary.WebApp.Infrastructure.Constants
 
 <div class="navbar fixed-top text-white" style="background-color:#2d2d2d; width:82%">
     <div class="logo">
         <a href="/" class="bg-white">
-            @*<img height="29" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg/2560px-Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg.png" />*@  
+            @*<img height="29" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg/2560px-Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg.png" />*@
             <img height="29" src="../blazor_dictionary_logo.png" />
         </a>
     </div>
@@ -74,14 +74,21 @@
     </AuthorizeView>
 
     <div class="sub-nav">
-        <a @onclick="@(e=>RefreshEntries(""))" class="sub-nav-item active">bugün</a>
-        <a @onclick="@(e=>RefreshEntries("gündem"))" class="sub-nav-item">gündem</a>
-        <a @onclick="@(e=>RefreshEntries("bilgisayar"))" class="sub-nav-item">bilgisayar</a>
-        <a @onclick="@(e=>RefreshEntries("elektrik"))" class="sub-nav-item">elektrik</a>
-        <a @onclick="@(e=>RefreshEntries("makine"))" class="sub-nav-item">makine</a>
-        <a @onclick="@(e=>RefreshEntries("inşaat"))" class="sub-nav-item">inşaat</a>
-        <a @onclick="@(e=>RefreshEntries("mekatronik"))" class="sub-nav-item">mekatronik</a>
-        <a @onclick="@(e=>RefreshEntries("gıda"))" class="sub-nav-item">gıda</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.today))" class="sub-nav-item active">@CategoryConstants.today</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.agenda))" class="sub-nav-item">@CategoryConstants.agenda</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.computer))" class="sub-nav-item">@CategoryConstants.computer</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.electric))" class="sub-nav-item">@CategoryConstants.electric</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.machine))" class="sub-nav-item">@CategoryConstants.machine</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.civil))" class="sub-nav-item">@CategoryConstants.civil</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.mechatronics))" class="sub-nav-item">@CategoryConstants.mechatronics</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.food))" class="sub-nav-item">@CategoryConstants.food</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.industry))" class="sub-nav-item">@CategoryConstants.industry</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.chemistry))" class="sub-nav-item">@CategoryConstants.chemistry</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.biomedical))" class="sub-nav-item">@CategoryConstants.biomedical</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.environmental))" class="sub-nav-item">@CategoryConstants.environmental</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.space))" class="sub-nav-item">@CategoryConstants.space</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.material))" class="sub-nav-item">@CategoryConstants.material</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.other))" class="sub-nav-item">@CategoryConstants.other</a>
 
     </div>
 
@@ -96,9 +103,8 @@
         @*<a class="more-data" @onclick="@RefreshEntries">refresh</a>*@
 
         <ul class="list-group">
-            <EntriesComponent @ref="@entriesComponent" 
-                              Category="@Category"
-                              />
+            <EntriesComponent @ref="@entriesComponent"
+                              Category="@Category" />
         </ul>
 
     </div>

@@ -1,4 +1,5 @@
 ﻿using BlazorDictionary.Api.Application.Interfaces.Repositories;
+using BlazorDictionary.Api.Domain.Models;
 using BlazorDictionary.Common.Infrastructure.Extensions;
 using BlazorDictionary.Common.Models.Pages;
 using BlazorDictionary.Common.Models.Queries;
