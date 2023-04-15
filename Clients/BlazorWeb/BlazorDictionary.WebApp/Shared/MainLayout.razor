@@ -1,6 +1,8 @@
 ﻿@inherits LayoutComponentBase
 @using BlazorDictionary.WebApp.Infrastructure.Constants
 
+@inject IJSRuntime jsRuntime
+
 <div class="navbar fixed-top text-white" style="background-color:#2d2d2d; width:82%">
     <div class="logo">
         <a href="/" class="bg-white">
@@ -72,7 +74,6 @@
 
 
     </AuthorizeView>
-
     <div class="sub-nav">
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.today))" class="sub-nav-item active">@CategoryConstants.today</a>
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.agenda))" class="sub-nav-item">@CategoryConstants.agenda</a>
@@ -89,7 +90,6 @@
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.space))" class="sub-nav-item">@CategoryConstants.space</a>
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.material))" class="sub-nav-item">@CategoryConstants.material</a>
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.other))" class="sub-nav-item">@CategoryConstants.other</a>
-
     </div>
 
 
@@ -119,7 +119,7 @@
 
 
 @code{
-    public string Category { get; set; } =CategoryConstants.today;
+    public string Category { get; set; } = CategoryConstants.today;
     private EntriesComponent entriesComponent;
     private string searchText;
     private bool showSearchResult;
@@ -191,7 +191,5 @@
         navigationManager.NavigateTo($"/entry/{entryId}");
     }
 
-
-
-
+   
 }

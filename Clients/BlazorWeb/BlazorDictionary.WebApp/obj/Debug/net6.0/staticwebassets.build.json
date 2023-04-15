@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "55aeED4e7dAAS7NqEnaBwl5olNrJACfez1QunhFBmoI=",
+  "Hash": "NwVu8Dlpk4TuA2DbBgAHu/nnl9REpvaYt++jB9UAvE8=",
   "Source": "BlazorDictionary.WebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7869,6 +7869,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\jquery\\jquery-3.6.4.min.js",
+      "SourceId": "BlazorDictionary.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "jquery/jquery-3.6.4.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\jquery\\jquery-3.6.4.min.js"
     },
     {
       "Identity": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\sample-data\\weather.json",

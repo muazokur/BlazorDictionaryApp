@@ -1,39 +1,57 @@
 ﻿@page "/createEntry"
+@using BlazorDictionary.WebApp.Infrastructure.Constants
+    <br />
+    <br />
 
-<br />
-<br />
+    <EditForm Model="@command" OnValidSubmit="@CreateEntry">
+        <div class="entry-comment-add-container p-5">
+            <div class="entry-comment-add">
+                <InputText @bind-Value="command.Subject" class="form-control" placeHolder="subject" />
+                <br />
+                @*<InputText @bind-Value="command.Category" class="form-control" placeHolder="category" />*@
+                <br />
+                <label>Kategori</label>
+                <br />
+                <InputSelect @bind-Value="command.Category" class="form-control">
+                    <option value="diğer"></option>
 
-<EditForm Model="@command" OnValidSubmit="@CreateEntry">
-    <div class="entry-comment-add-container p-5">
-        <div class="entry-comment-add">
-            <InputText @bind-Value="command.Subject" class="form-control" placeHolder="subject" />
-            <br />
-            <InputText @bind-Value="command.Category" class="form-control" placeHolder="category" />
-            <br />
-            <InputTextArea @bind-Value="command.Content" class="entry-comment-textarea" placeHolder="tell us something" />
+                    @foreach (var category in CategoryConstants.GetAllConstant())
+                    {
+                        <option value="@category">@category</option>
 
-            <div class="entry-comment-actions">
-                <input type="submit" class="btn btn-success btn-sozluk" value="Crate" />
+                    }
+
+                </InputSelect>
+
+                <br />
+
+
+                <InputTextArea @bind-Value="command.Content" class="entry-comment-textarea" placeHolder="tell us something" />
+
+                <div class="entry-comment-actions">
+                    <input type="submit" class="btn btn-success btn-sozluk" value="Crate" />
+                </div>
+                <br />
+                <h4>@command.Category</h4>
+
             </div>
-
         </div>
-    </div>
-</EditForm>
+    </EditForm>
 
 
-@code {
-    [Inject]
-    public IEntryService entryService { get; set; }
+    @code {
+        [Inject]
+        public IEntryService entryService { get; set; }
 
-    [Inject]
-    public NavigationManager navigationManager { get; set; }
+        [Inject]
+        public NavigationManager navigationManager { get; set; }
 
-    private CreateEntryCommand command = new();
+        private CreateEntryCommand command = new();
 
-    public async Task CreateEntry()
-    {
-        var createEntryId = await entryService.CreateEntry(command);
+        public async Task CreateEntry()
+        {
+            var createEntryId = await entryService.CreateEntry(command);
 
-        navigationManager.NavigateTo($"/entry/{createEntryId}");
+            navigationManager.NavigateTo($"/entry/{createEntryId}");
+        }
     }
-}

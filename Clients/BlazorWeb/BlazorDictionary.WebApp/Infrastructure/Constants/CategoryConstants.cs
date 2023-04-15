@@ -17,5 +17,14 @@
         public const string material = "malzeme";
         public const string biomedical = "biyomedikal";
         public const string other = "diğer";
+
+        public static string[] GetAllConstant()
+        {
+            string[] categoryList = new string[] {
+                agenda,today,computer,electric,machine,civil,mechatronics,food,industry,chemistry,environmental,space,material,biomedical,other
+            };
+
+            return categoryList;
+        }
     }
 }

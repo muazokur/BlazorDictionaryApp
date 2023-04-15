@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\jquery\\jquery-3.6.4.min.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery-3.6.4.min.js"
+    },
+    {
       "Id": "C:\\Users\\MUAZ\\Desktop\\BlazorDictionary\\src\\Clients\\BlazorWeb\\BlazorDictionary.WebApp\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
