@@ -24,13 +24,14 @@
                                                   OnVoteClicked="@OnVoteClicked"
                                                   FavoritedCount="@Entry.FavoriteCount"
                                                   VoteType=@Entry.VoteType
-                                                  IsFavorited="@Entry.IsFavorited" />
+                                                  IsFavorited="@Entry.IsFavorited"
+                                                  UpVoteCount="@Entry.UpVoteCount"
+                                                  DownVoteCount="@Entry.DownVoteCount" />
             }
 
             <EntryFooterAuthorComponent UserName="@Entry.CreatedByUserName"
                                         CreateDate="@Entry.CreatedDate"
-                                        isLoggedIn="@IdentityService.IsLoggedIn"
-                                        />
+                                        isLoggedIn="@IdentityService.IsLoggedIn" />
 
         </div>
     </div>
@@ -52,6 +53,16 @@
 
     [Inject]
     IIdentityService IdentityService { get; set; }
+
+    private int UpVoteCount { get; set; }
+    private int DownVoteCount { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        UpVoteCount = Entry.UpVoteCount;
+        DownVoteCount = Entry.DownVoteCount;
+        return base.OnInitializedAsync();
+    }
 
     private async Task OnFavClicked(BlazorDictionary.WebApp.Infrastructure.Models.FavClickedEventArgs args)
     {
@@ -85,6 +96,17 @@
             if (args.UpVoteDeleted || args.DownVoteDeleted)
             {
                 await voteService.DeleteEntryVote(args.EntryId);
+                switch (Entry.VoteType)
+                {
+                    case VoteType.DownVote:
+                        Entry.DownVoteCount--;
+                        break;
+                    case VoteType.UpVote:
+                        Entry.UpVoteCount--;
+                        break;
+                    default:
+                        break;
+                }
                 Entry.VoteType = VoteType.None;
                 return;
             }
@@ -92,12 +114,45 @@
             if (args.IsUpVoteClicked)
             {
                 await voteService.CreateEntryUpVote(args.EntryId);
+
+                switch (Entry.VoteType)
+                {
+                    case VoteType.None:
+                        Entry.UpVoteCount++;
+                        break;
+                    case VoteType.UpVote:
+                        Entry.UpVoteCount--;
+                        break;
+                    case VoteType.DownVote:
+                        Entry.DownVoteCount--;
+                        Entry.UpVoteCount++;
+                        break;
+                    default:
+                        break;
+                }
+
                 Entry.VoteType = VoteType.UpVote;
+
                 return;
             }
             if (args.IsDownVoteClicked)
             {
                 await voteService.CreateEntryDownVote(args.EntryId);
+                switch (Entry.VoteType)
+                {
+                    case VoteType.None:
+                        Entry.DownVoteCount++;
+                        break;
+                    case VoteType.UpVote:
+                        Entry.UpVoteCount--;
+                        Entry.DownVoteCount++;
+                        break;
+                    case VoteType.DownVote:
+                        Entry.DownVoteCount--;
+                        break;
+                    default:
+                        break;
+                }
                 Entry.VoteType = VoteType.DownVote;
                 return;
             }

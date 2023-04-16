@@ -21,5 +21,9 @@ namespace BlazorDictionary.Common.Models.Queries
     public class BaseFooterRateFavoriteViewModel : BaseFooterFavoriteViewModel
     {
         public VoteType VoteType { get; set; }
+
+        public int UpVoteCount { get; set; }
+        public int DownVoteCount { get; set; }
     }
+
 }

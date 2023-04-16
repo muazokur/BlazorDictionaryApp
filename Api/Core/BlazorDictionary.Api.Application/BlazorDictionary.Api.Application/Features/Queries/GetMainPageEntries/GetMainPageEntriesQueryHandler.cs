@@ -6,6 +6,7 @@ using BlazorDictionary.Common.Models.Queries;
 using BlazorDictionary.Common.ViewModels;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries
 {
@@ -25,6 +26,7 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries
                        .Include(i => i.CreatedBy)
                        .Include(i => i.EntryVotes);
 
+
             var list = query.Select(i => new GetEntryDetailViewModel()
             {
                 Id = i.Id,
@@ -32,6 +34,8 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries
                 Content = i.Content,
                 IsFavorited = request.UserId.HasValue && i.EntryFavorites.Any(j => j.CreatedById == request.UserId),
                 FavoriteCount = i.EntryFavorites.Count,
+                UpVoteCount = (i.EntryVotes.Where(j => j.VoteType == VoteType.UpVote)).Count(),
+                DownVoteCount = (i.EntryVotes.Where(j => j.VoteType == VoteType.DownVote)).Count(),
                 CreatedDate = i.CreateDate,
                 CreatedByUserName = i.CreatedBy.UserName,
                 VoteType = request.UserId.HasValue && i.EntryVotes.Any(j => j.CratedById == request.UserId) ? i.EntryVotes.FirstOrDefault(j => j.CratedById == request.UserId).VoteType : VoteType.None

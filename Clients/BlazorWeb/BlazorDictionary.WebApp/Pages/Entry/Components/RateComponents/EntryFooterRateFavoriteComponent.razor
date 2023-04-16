@@ -5,8 +5,9 @@
     <span>
 
         <a class="p-1" title="Up Vote!" style="margin-right:15px">
-            <span class="oi oi-arrow-top entry-vote @(VoteType==VoteType.UpVote ? "text-success":"text-secondary") " @onclick="(()=>UpClicked())"> </span>
+            <span class="oi oi-arrow-top entry-vote @(VoteType==VoteType.UpVote ? "text-success":"text-secondary") " @onclick="(()=>UpClicked())"></span>
             <label>@UpVoteCount</label>
+
         </a>
 
 
