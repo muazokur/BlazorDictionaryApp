@@ -24,7 +24,7 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetMainPageEntries
             
             query = query.Include(i => i.EntryFavorites)
                        .Include(i => i.CreatedBy)
-                       .Include(i => i.EntryVotes);
+                       .Include(i => i.EntryVotes).OrderByDescending(i=>i.EntryVotes.Count);
 
 
             var list = query.Select(i => new GetEntryDetailViewModel()

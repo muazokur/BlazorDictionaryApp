@@ -3,7 +3,7 @@
 
 @inject IJSRuntime jsRuntime
 
-<div class="navbar fixed-top text-white" style="background-color:#2d2d2d; width:82%">
+<div class="navbar fixed-top text-white navbar-expand-lg" style="background-color:#2d2d2d; width:82%">
     <div class="logo">
         <a href="/" class="bg-white">
             @*<img height="29" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg/2560px-Ek%C5%9Fi_S%C3%B6zl%C3%BCk_yeni_logo.svg.png" />*@
@@ -26,7 +26,9 @@
             <button type="button" class="btn btn-sozluk btn-success"
                     @onclick="@Search"
                     @onfocusout="@OnSearchFocusOut">
-                <i class="fa fa-search h-75"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
             </button>
 
         </div>
@@ -75,8 +77,8 @@
 
     </AuthorizeView>
     <div class="sub-nav">
-        <a @onclick="@(e=>RefreshEntries(CategoryConstants.today))" class="sub-nav-item active">@CategoryConstants.today</a>
-        <a @onclick="@(e=>RefreshEntries(CategoryConstants.agenda))" class="sub-nav-item">@CategoryConstants.agenda</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.agenda))" class="sub-nav-item active">@CategoryConstants.agenda</a>
+        <a @onclick="@(e=>RefreshEntries(CategoryConstants.today))" class="sub-nav-item">@CategoryConstants.today</a>
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.computer))" class="sub-nav-item">@CategoryConstants.computer</a>
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.electric))" class="sub-nav-item">@CategoryConstants.electric</a>
         <a @onclick="@(e=>RefreshEntries(CategoryConstants.machine))" class="sub-nav-item">@CategoryConstants.machine</a>
@@ -119,7 +121,7 @@
 
 
 @code{
-    public string Category { get; set; } = CategoryConstants.today;
+    public string Category { get; set; } = CategoryConstants.agenda;
     private EntriesComponent entriesComponent;
     private string searchText;
     private bool showSearchResult;
