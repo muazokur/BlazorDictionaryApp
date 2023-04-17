@@ -13,7 +13,7 @@ namespace BlazorDictionary.Api.Domain.Models
         public string EmailAdress { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public bool EmailConfirmend { get; set; }
+        public bool EmailConfirmend { get; set; } = true;
         public virtual ICollection<Entry> Entries { get; set;}
         public virtual ICollection<EntryFavorite> EntryFavorites { get; set; }
         public virtual ICollection<EntryComment> EntryComments { get; set;}
