@@ -28,9 +28,13 @@ namespace BlazorDictionary.Api.Application.Features.Commands.User.Create
 
         public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            var existUser=await userRepository.GetSingleAsync(i=>i.EmailAdress==request.EmailAdress);
+            var existUserEmail=await userRepository.GetSingleAsync(i=>i.EmailAdress==request.EmailAdress);
+            var existUserName=await userRepository.GetSingleAsync(i=>i.UserName==request.UserName);
 
-            if (existUser is not null)
+            if (existUserEmail is not null)
+                throw new DatabaseValidationException("User already exist!");
+            
+            if (existUserName is not null)
                 throw new DatabaseValidationException("User already exist!");
 
             request.Password=PasswordEncryptor.Encrypt(request.Password);
