@@ -38,6 +38,8 @@ namespace BlazorDictionary.Api.Application.Features.Queries.GetEntryComments
                 IsFavorited = request.UserId.HasValue && i.EntryCommentFavorites.Any(j => j.CreatedById == request.UserId),
                 FavoriteCount = i.EntryCommentFavorites.Count,
                 CreatedDate = i.CreateDate,
+                UpVoteCount = (i.EntryCommentVotes.Where(j => j.VoteType == VoteType.UpVote)).Count(),
+                DownVoteCount = (i.EntryCommentVotes.Where(j => j.VoteType == VoteType.DownVote)).Count(),
                 CreatedByUserName = i.CreatedBy.UserName,
                 VoteType = request.UserId.HasValue && i.EntryCommentVotes.Any(j => j.CratedById == request.UserId) ? i.EntryCommentVotes.FirstOrDefault(j => j.CratedById == request.UserId).VoteType : VoteType.None
             });

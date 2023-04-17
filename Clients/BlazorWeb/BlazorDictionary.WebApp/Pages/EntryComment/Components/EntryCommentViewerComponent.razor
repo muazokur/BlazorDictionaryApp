@@ -10,7 +10,10 @@
                                               OnVoteClicked="@OnVoteClicked"
                                               FavoritedCount="@EntryComment.FavoriteCount"
                                               VoteType=@EntryComment.VoteType
-                                              IsFavorited="@EntryComment.IsFavorited" />
+                                              IsFavorited="@EntryComment.IsFavorited"
+                                              UpVoteCount="@EntryComment.UpVoteCount"
+                                              DownVoteCount="@EntryComment.DownVoteCount"
+                                              />
 
             <EntryFooterAuthorComponent UserName="@EntryComment.CreatedByUserName"
                                         CreateDate="@EntryComment.CreatedDate" 
@@ -68,6 +71,17 @@
             if (args.UpVoteDeleted || args.DownVoteDeleted)
             {
                 await voteService.DeleteEntryCommentVote(args.EntryId);
+                switch (EntryComment.VoteType)
+                {
+                    case VoteType.DownVote:
+                        EntryComment.DownVoteCount--;
+                        break;
+                    case VoteType.UpVote:
+                        EntryComment.UpVoteCount--;
+                        break;
+                    default:
+                        break;
+                }
                 EntryComment.VoteType = VoteType.None;
                 return;
             }
@@ -75,12 +89,42 @@
             if (args.IsUpVoteClicked)
             {
                 await voteService.CreateEntryCommentUpVote(args.EntryId);
+                switch (EntryComment.VoteType)
+                {
+                    case VoteType.None:
+                        EntryComment.UpVoteCount++;
+                        break;
+                    case VoteType.UpVote:
+                        EntryComment.UpVoteCount--;
+                        break;
+                    case VoteType.DownVote:
+                        EntryComment.DownVoteCount--;
+                        EntryComment.UpVoteCount++;
+                        break;
+                    default:
+                        break;
+                }
                 EntryComment.VoteType = VoteType.UpVote;
                 return;
             }
             if (args.IsDownVoteClicked)
             {
                 await voteService.CreateEntryCommentDownVote(args.EntryId);
+                switch (EntryComment.VoteType)
+                {
+                    case VoteType.None:
+                        EntryComment.DownVoteCount++;
+                        break;
+                    case VoteType.UpVote:
+                        EntryComment.UpVoteCount--;
+                        EntryComment.DownVoteCount++;
+                        break;
+                    case VoteType.DownVote:
+                        EntryComment.DownVoteCount--;
+                        break;
+                    default:
+                        break;
+                }
                 EntryComment.VoteType = VoteType.DownVote;
                 return;
             }
