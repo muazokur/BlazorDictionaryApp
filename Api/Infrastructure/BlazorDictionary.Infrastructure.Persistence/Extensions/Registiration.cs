@@ -14,12 +14,13 @@ namespace BlazorDictionary.Infrastructure.Persistence.Extensions
 {
     public static class Registiration
     {
+        public static string ConnectionString { get; set; }
         public static IServiceCollection AddInfrastructureRegistiration(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddDbContext<BlazorDictionaryContext>(conf =>
             {
-                var connectionString = configuration["BlazorDictionaryConnectionStrings"].ToString();
-                conf.UseSqlServer(connectionString, options =>
+                var ConnectionString = configuration["BlazorDictionaryConnectionStrings"].ToString();
+                conf.UseSqlServer(ConnectionString, options =>
                 {
                     options.EnableRetryOnFailure();
                 });

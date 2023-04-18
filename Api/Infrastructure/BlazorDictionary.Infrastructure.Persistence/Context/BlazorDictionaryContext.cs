@@ -7,6 +7,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using BlazorDictionary.Api.Domain.Models;
+using Microsoft.Extensions.Configuration;
+using BlazorDictionary.Infrastructure.Persistence.Extensions;
 
 namespace BlazorDictionary.Infrastructure.Persistence.Context
 {
@@ -41,8 +43,8 @@ namespace BlazorDictionary.Infrastructure.Persistence.Context
         {
             if(!optionsBuilder.IsConfigured)
             {
-                var connectionString = "Server=DESKTOP-G7KHF4G\\SQLEXPRESS;Initial Catalog=BlazorDictionaryDB;Integrated security=true";
-                optionsBuilder.UseSqlServer(connectionString, options =>
+                //var connectionString = "Server=DESKTOP-G7KHF4G\\SQLEXPRESS;Initial Catalog=BlazorDictionaryDB;Integrated security=true";
+                optionsBuilder.UseSqlServer(Registiration.ConnectionString, options =>
                 {
                     options.EnableRetryOnFailure();
                 });

@@ -21,8 +21,7 @@ namespace BlazorDictionary.Projections.FavoriteService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            //var connStr = configuration.GetConnectionString("SqlServer");
-            var connStr = "Server=DESKTOP-G7KHF4G\\SQLEXPRESS;Initial Catalog=BlazorDictionaryDB;Integrated security=true";
+            var connStr = configuration.GetConnectionString("SqlServer");
 
             var favService = new Services.FavoriteService(connStr);
 
